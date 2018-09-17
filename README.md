@@ -32,7 +32,8 @@ Player will be able to move Tao right or left using Right Arrow/D or Left Arrow/
 
 ## License:
 
-'''
+
+
                             Tao's Adventure
     Copyright  (C)  2018  Shaswata Das  &  Shakirul Hasan Khan.
 
@@ -48,4 +49,4 @@ Player will be able to move Tao right or left using Right Arrow/D or Left Arrow/
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-'''
+    
