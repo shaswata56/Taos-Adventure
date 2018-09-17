@@ -26,5 +26,5 @@ Player will be able to move Tao right or left using Right Arrow/D or Left Arrow/
 
 
 ### Resources:
-- "C++"
-- "SFML 2.5.0"
+-"C++"
+-"SFML 2.5.0"
