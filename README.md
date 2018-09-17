@@ -1,8 +1,8 @@
    #                                                      Tao's  Adventure
    
-   >                                                                               Project: 2 | SWE-1/2 | Group: 17
-   >                                                                               [Shakirul Hasan Khan](https://github.com/KhanShaheb) – 2017831034
-   >                                                                               [Shaswata Das](https://github.com/shaswata56) – 2017831050
+   >                                 Project: 2 | SWE-1/2 | Group: 17
+   >                                 [Shakirul Hasan Khan](https://github.com/KhanShaheb) – 2017831034
+   >                                 [Shaswata Das](https://github.com/shaswata56) – 2017831050
 
 
 
