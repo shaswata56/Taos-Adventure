@@ -1,7 +1,7 @@
 #ifndef TAO_H_INCLUDED
 #define TAO_H_INCLUDED
 #include <SFML/Graphics.hpp>
-#include "Game.h"
+#include "game.h"
 
 class Tao
 {
