@@ -18,8 +18,6 @@ protected:
     sf::CircleShape* tShape;
 
 private:
-
-
 };
 
 #endif // TAO_H_INCLUDED
