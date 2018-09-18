@@ -12,7 +12,6 @@ class SceneMgr
     protected:
     private:
         Scene* tAcualScene;
-
 };
 
 #endif // SCENEMGR_H_INCLUDED
