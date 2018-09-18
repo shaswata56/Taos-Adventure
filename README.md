@@ -1,4 +1,4 @@
-   #                                                      Tao's  Adventure
+   #                                                      Tao's  Adventure  [![CodeFactor](https://www.codefactor.io/repository/github/shaswata56/taos-adventure/badge)](https://www.codefactor.io/repository/github/shaswata56/taos-adventure)
    
    Project: 2 | SWE-1/2 | Group: 17
    
