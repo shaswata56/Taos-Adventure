@@ -6,7 +6,7 @@
    
    [Shaswata Das](https://github.com/shaswata56) – 2017831050
 
-   
+***
    
 
 ### Storyline:
@@ -26,8 +26,8 @@ Player will be able to move Tao right or left using Right Arrow/D or Left Arrow/
 
 
 ### Resources:
-- "C++"
-- "SFML 2.5.0"
+- **C++**
+- **SFML 2.5.0**
 
 
 ## License:
