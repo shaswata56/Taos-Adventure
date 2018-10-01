@@ -9,10 +9,12 @@ using namespace std;
 using namespace sf;
 
 Event ev;
-Tao taoChar({20});
+Tao taoChar;
 
 void game(){
-    RenderWindow win(VideoMode(600, 600), "Tao's Adventure");
+    taoChar.setPos({256, 256});
+    RenderWindow win(VideoMode(1366, 768), "Tao's Adventure", Style::Fullscreen);
+    win.setFramerateLimit(30);
     while(win.isOpen()){
         while(win.pollEvent(ev)){
             switch(ev.type){
@@ -24,6 +26,8 @@ void game(){
             }
         }
         win.clear();
+        if(taoChar.rotataion<5) taoChar.rotataion++;
+        taoChar.move({0, 0});
         taoChar.drawTo(win);
         win.display();
     }

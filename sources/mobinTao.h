@@ -5,39 +5,49 @@
 
 using namespace sf;
 
+
 class Tao{
+private:
+    Texture taoTexture;
+    Sprite taoSprite;
+
+    void taoInclude(){
+        taoTexture.loadFromFile("resources/tao/Ten 13.png");
+        taoSprite.setTexture(taoTexture);
+    }
+
 public:
-    Tao(float size){
-        taoCircle.setRadius(size);
-        taoCircle.setFillColor(Color::Red);
+    float rotataion=0;
+    Tao(){
+        taoInclude();
+        taoSprite.setOrigin(256, 256);
     }
 
     void drawTo(RenderWindow& win){
-        win.draw(taoCircle);
+        win.draw(taoSprite);
     }
 
     void move(Vector2f distance){
-        taoCircle.move(distance);
-
+        taoSprite.move(distance);
+        taoSprite.rotate(rotataion);
     }
 
     void setPos(Vector2f newPos){
-        taoCircle.setPosition(newPos);
+        taoSprite.setPosition(newPos);
     }
 
     bool onGround(float ground){
-        return taoCircle.getPosition().y==ground;
+        return taoSprite.getPosition().y==ground;
     }
 
     float getY(){
-        return taoCircle.getPosition().y;
+        return taoSprite.getPosition().y;
     }
     float getX(){
-        return taoCircle.getPosition().x;
+        return taoSprite.getPosition().x;
     }
 
-private:
-    CircleShape taoCircle;
+
 };
 
 #endif // MOBINTAO_HPP_INCLUDED
