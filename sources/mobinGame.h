@@ -11,13 +11,17 @@ using namespace sf;
 Event ev;
 Tao taoChar;
 
-void game(){
+void game()
+{
     taoChar.setPos({256, 256});
     RenderWindow win(VideoMode(1366, 768), "Tao's Adventure", Style::Fullscreen);
     win.setFramerateLimit(30);
-    while(win.isOpen()){
-        while(win.pollEvent(ev)){
-            switch(ev.type){
+    while(win.isOpen())
+    {
+        while(win.pollEvent(ev))
+        {
+            switch(ev.type)
+            {
             case Event::Closed:
                 win.close();
                 break;
