@@ -44,3 +44,4 @@
 *.vcxproj
 *.filters
 *.user
+bin/*

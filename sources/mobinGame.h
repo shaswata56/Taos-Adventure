@@ -1,6 +1,5 @@
 #ifndef MOBINGAME_H_INCLUDED
 #define MOBINGAME_H_INCLUDED
-
 #include<iostream>
 #include<SFML/Graphics.hpp>
 #include "mobinTao.h"
@@ -13,9 +12,11 @@ Tao taoChar;
 
 void game()
 {
+    ContextSettings settings;
+    settings.antialiasingLevel = 8;
     taoChar.setPos({256, 256});
-    RenderWindow win(VideoMode(1920, 1080), "Tao's Adventure", Style::Fullscreen);
-    win.setFramerateLimit(60);
+    RenderWindow win(VideoMode(1920, 1080), "Tao's Adventure", Style::Fullscreen, settings);
+    win.setVerticalSyncEnabled(true);
     while(win.isOpen())
     {
         while(win.pollEvent(ev))

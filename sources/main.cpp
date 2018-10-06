@@ -1,7 +1,8 @@
 #include "mobinGame.h"
 using namespace sf;
 
-int main(){
+int main()
+{
     game();
     return 0;
 }

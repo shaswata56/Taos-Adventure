@@ -1,6 +1,5 @@
 #ifndef MOBINTAO_H_INCLUDED
 #define MOBINTAO_H_INCLUDED
-
 #include<SFML/Graphics.hpp>
 
 using namespace sf;
@@ -14,6 +13,7 @@ private:
     void taoInclude(){
         taoTexture.loadFromFile("resources/tao/Ten 13.png");
         taoSprite.setTexture(taoTexture);
+        taoSprite.setScale(0.5, 0.5);
     }
 
 public:
