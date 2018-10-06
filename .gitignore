@@ -33,3 +33,14 @@
 *.cbp
 *.layout
 *.depend
+.vs/Taos-Adventure/v15/.suo
+*.db
+*.opendb
+*.ipch
+*.log
+*.pdb
+*.tlog
+*.sln
+*.vcxproj
+*.filters
+*.user
