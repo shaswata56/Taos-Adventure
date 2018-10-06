@@ -14,8 +14,8 @@ Tao taoChar;
 void game()
 {
     taoChar.setPos({256, 256});
-    RenderWindow win(VideoMode(1366, 768), "Tao's Adventure", Style::Fullscreen);
-    win.setFramerateLimit(30);
+    RenderWindow win(VideoMode(1920, 1080), "Tao's Adventure", Style::Fullscreen);
+    win.setFramerateLimit(60);
     while(win.isOpen())
     {
         while(win.pollEvent(ev))
@@ -35,6 +35,7 @@ void game()
         taoChar.drawTo(win);
         win.display();
     }
+    win.close();
 }
 
 #endif // MOBINGAME_H_INCLUDED
