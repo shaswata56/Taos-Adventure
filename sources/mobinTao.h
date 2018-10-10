@@ -45,7 +45,6 @@ public:
     float getX(){
         return taoSprite.getPosition().x;
     }
-    
 };
 
 #endif // MOBINTAO_HPP_INCLUDED
