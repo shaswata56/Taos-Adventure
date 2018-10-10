@@ -4,7 +4,6 @@
 
 using namespace sf;
 
-
 class Tao{
 private:
     Texture taoTexture;
@@ -46,8 +45,7 @@ public:
     float getX(){
         return taoSprite.getPosition().x;
     }
-
-
+    
 };
 
 #endif // MOBINTAO_HPP_INCLUDED
