@@ -1,6 +1,7 @@
 #ifndef MOBINTAO_H_INCLUDED
 #define MOBINTAO_H_INCLUDED
-#include<SFML/Graphics.hpp>
+#include <bits/stdc++.h>
+#include <SFML/Graphics.hpp>
 
 using namespace sf;
 

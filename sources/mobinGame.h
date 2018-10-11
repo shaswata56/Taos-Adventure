@@ -1,7 +1,5 @@
 #ifndef MOBINGAME_H_INCLUDED
 #define MOBINGAME_H_INCLUDED
-#include<iostream>
-#include<SFML/Graphics.hpp>
 #include "mobinTao.h"
 
 using namespace std;
