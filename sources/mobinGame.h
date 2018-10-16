@@ -13,7 +13,7 @@ Tao taoChar;
 
 void game(){
     taoChar.setPos({256, 256});
-    RenderWindow win(VideoMode(1366, 768), "Tao's Adventure", Style::Fullscreen);
+    RenderWindow win(VideoMode(1066, 668), "Tao's Adventure");
     win.setFramerateLimit(30);
     while(win.isOpen()){
         while(win.pollEvent(ev)){
