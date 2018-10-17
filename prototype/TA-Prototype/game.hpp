@@ -12,7 +12,8 @@ Player hero({20});
 
 void game(){
     hero.setPos({50.0f, 500.0f});
-    float gravity=1.0f, moveSpeed=25.0f, vSpeed=0.0f;
+    float gravity=1.0f, moveSpeed=25.0f;
+    int vSpeed=0;
     bool isJumping=false, moving=true;
     RenderWindow win(VideoMode(1000, 600), "Hello World");
     win.setFramerateLimit(60);
@@ -28,10 +29,10 @@ void game(){
             isJumping=true;
         }
         if(Keyboard::isKeyPressed(Keyboard::Right)){
-            if(vSpeed<8.0f) vSpeed+=0.2f;
+            if(vSpeed<80) vSpeed+=2;
         }
         if(Keyboard::isKeyPressed(Keyboard::Left)){
-            if(vSpeed>(-8.0f)) vSpeed-=0.2f;
+            if(vSpeed>-80) vSpeed-=2;
         }
         if(isJumping) moveSpeed-=gravity;
         if(hero.getY()<500.0f && !isJumping) {
@@ -42,14 +43,13 @@ void game(){
         if(hero.getY()>=500.0f && isJumping) moveSpeed=25.0f;
         if(hero.getY()>=500.0f && !isJumping) moveSpeed=0.0f, hero.setPos({hero.getX(), 500.0f});
 
-        hero.move({vSpeed, 0});
-
         if(!moving){
-            if(vSpeed>=0.0f) vSpeed-=0.2f;
-            if(vSpeed<=0.0f) vSpeed+=0.2f;
-            std::cout<<vSpeed<<std::endl;
-            if(vSpeed==0.0f) moving=true;
+            if(vSpeed>=0) vSpeed-=2;
+            if(vSpeed<=0) vSpeed+=2;
+            if(vSpeed==0) moving=true;
         }
+
+        if(vSpeed!=0) hero.move({(float)vSpeed/10.0f, 0});
 
         while(win.pollEvent(ev)){
             switch(ev.type){
