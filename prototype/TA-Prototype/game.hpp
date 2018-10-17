@@ -5,8 +5,6 @@
 #include "player.hpp"
 #include <iostream>
 
-//#include "includes.hpp"
-
 using namespace sf;
 
 Event ev;
@@ -50,7 +48,7 @@ void game(){
             if(vSpeed>=0.0f) vSpeed-=0.2f;
             if(vSpeed<=0.0f) vSpeed+=0.2f;
             std::cout<<vSpeed<<std::endl;
-            if(vSpeed==0.2f || vSpeed==-0.2f) moving=true;
+            if(vSpeed==0.0f) moving=true;
         }
 
         while(win.pollEvent(ev)){
