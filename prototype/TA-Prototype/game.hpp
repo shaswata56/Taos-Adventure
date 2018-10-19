@@ -12,7 +12,7 @@ Player hero({20});
 
 void game(){
     hero.setPos({50.0f, 500.0f});
-    float gravity=1.0f, moveSpeed=25.0f;
+    float gravity=1.0f, jumpSpeed=25.0f;
     int vSpeed=0;
     bool isJumping=false, moving=true;
     RenderWindow win(VideoMode(1000, 600), "Hello World");
@@ -25,7 +25,7 @@ void game(){
     while(win.isOpen()){
 
         if(Keyboard::isKeyPressed(Keyboard::Up)){
-            hero.move({0, -moveSpeed});
+            hero.move({0, -jumpSpeed});
             isJumping=true;
         }
         if(Keyboard::isKeyPressed(Keyboard::Right)){
@@ -34,19 +34,21 @@ void game(){
         if(Keyboard::isKeyPressed(Keyboard::Left)){
             if(vSpeed>-80) vSpeed-=2;
         }
-        if(isJumping) moveSpeed-=gravity;
+
+        if(isJumping) jumpSpeed-=gravity;
+
         if(hero.getY()<500.0f && !isJumping) {
-            moveSpeed-=gravity;
-            hero.move({0, -moveSpeed});
+            jumpSpeed-=gravity;
+            hero.move({0, -jumpSpeed});
         }
 
-        if(hero.getY()>=500.0f && isJumping) moveSpeed=25.0f;
-        if(hero.getY()>=500.0f && !isJumping) moveSpeed=0.0f, hero.setPos({hero.getX(), 500.0f});
+        if(hero.getY()>=500.0f && isJumping) jumpSpeed=25.0f;
+        if(hero.getY()>=500.0f && !isJumping) jumpSpeed=0.0f, hero.setPos({hero.getX(), 500.0f});
 
         if(!moving){
             if(vSpeed>=0) vSpeed-=2;
             if(vSpeed<=0) vSpeed+=2;
-            if(vSpeed==0) moving=true;
+            if(vSpeed==0) moving=false;
         }
 
         if(vSpeed!=0) hero.move({(float)vSpeed/10.0f, 0});
@@ -62,6 +64,7 @@ void game(){
                 break;
             }
         }
+
         win.clear();
         win.draw(groundR);
         hero.drawTo(win);
@@ -70,4 +73,4 @@ void game(){
     }
 }
 
-#endif // GAME_HPP_INCLUDED
+#endif //GAME_HPP_INCLUDED

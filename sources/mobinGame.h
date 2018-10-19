@@ -13,12 +13,12 @@ void game()
     ContextSettings settings;
     settings.antialiasingLevel = 8;
     taoChar.setPos({256, 256});
-<<<<<<< HEAD
+//<<<<<<< HEAD
     RenderWindow win(VideoMode(1066, 668), "Tao's Adventure");
     win.setFramerateLimit(30);
     while(win.isOpen()){
         while(win.pollEvent(ev)){
-            switch(ev.type){
+            switch(ev.type){/*
 =======
     RenderWindow win(VideoMode(1920, 1080), "Tao's Adventure", Style::Fullscreen, settings);
     win.setVerticalSyncEnabled(true);
@@ -28,7 +28,7 @@ void game()
         {
             switch(ev.type)
             {
->>>>>>> dca0480332ab0400424a6b255d89bfb14cf09bf4
+>>>>>>> dca0480332ab0400424a6b255d89bfb14cf09bf4*/
             case Event::Closed:
                 win.close();
                 break;
