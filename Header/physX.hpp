@@ -11,8 +11,8 @@ float accelerationY = 0;
 float gravity = 2;
 int pressUpCount=0;
 int ground=500;
-void updateMovement() {
-
+void updateMovement()
+{
     if(y < ground){
         velocityY += gravity;
     }
