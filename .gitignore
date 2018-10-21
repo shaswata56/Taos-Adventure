@@ -45,3 +45,4 @@
 *.filters
 *.user
 bin/*
+Header/collision.hpp

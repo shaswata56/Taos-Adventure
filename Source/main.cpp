@@ -3,14 +3,16 @@
 
 Tao tao;
 World world;
-int main(){
-    RenderWindow app(VideoMode(1000,750),"Tile Map");
+
+int main() {
+    RenderWindow app(VideoMode(1000,750), "Pos:");
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
     tao.LoadTao("Resource/img/Object/ball.png");
     world.LoadBG("Resource/img/BG/bgscr.png");
     world.LoadFG("Resource/img/BG/12.png");
     int s = 10, bx=500;
+    //ground=621;
     while (app.isOpen())
     {
         Event e;
@@ -37,10 +39,15 @@ int main(){
                 tao.roll(velocityX);
         }
 
-        updateMovement();
-
         View view(Vector2f(bx, 375), Vector2f(1000, 750));
         if(x >= 510 && x <= 2490) bx=x;
+
+        string str = to_string(Mouse::getPosition(app).x);
+        str.append(",");
+        str.append(to_string(Mouse::getPosition(app).y));
+        app.setTitle(str);
+
+        updateMovement();
 
         tao.setPos(x, y);
         app.clear();
