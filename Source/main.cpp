@@ -11,7 +11,7 @@ int main() {
     tao.LoadTao("Resource/img/Object/ball.png");
     world.LoadBG("Resource/img/BG/bgscr.png");
     world.LoadFG("Resource/img/BG/12.png");
-    int s = 10, bx=500;
+    int s = 15, bx=500, level ;
     //ground=621;
     while (app.isOpen())
     {
@@ -22,10 +22,10 @@ int main() {
             }
         }
 
-        if(Keyboard::isKeyPressed(Keyboard::Left) && x > 20){
+        if(Keyboard::isKeyPressed(Keyboard::Left) && x > 20 && y >= ground){
             tao.RolnRun(-s);
         }
-        else if(Keyboard::isKeyPressed(Keyboard::Right) && x < 2990){
+        else if(Keyboard::isKeyPressed(Keyboard::Right) && x < 2990 && y >= ground){
             tao.RolnRun(s);
         }
         if(Keyboard::isKeyPressed(Keyboard::Up) && pressUpCount == 0){
