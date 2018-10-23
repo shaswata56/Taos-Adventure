@@ -46,3 +46,6 @@
 *.user
 bin/*
 Header/collision.hpp
+*.svg
+*.cdr
+*.eps
