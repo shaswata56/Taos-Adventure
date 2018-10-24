@@ -11,6 +11,7 @@ int main() {
     tao.LoadTao("Resource/img/Object/ball.png");
     world.LoadBG("Resource/img/BG/bgscr.png");
     world.LoadFG("Resource/img/BG/12.png");
+    world.PosFG(195+49);
     int s = 15, bx=600;
     bool chk=false;
     while (app.isOpen())
@@ -22,10 +23,18 @@ int main() {
             }
         }
 
-        if(level == 3 && chk == false){
-            world.LoadBG("Resource/img/3/bg.png");
-            world.LoadFG("Resource/img/3/level.png");
-            chk = true;
+        if(level == 3){
+            if(chk == false){
+                world3.LoadBG("Resource/img/3/bg.png");
+                world3.LoadFG("Resource/img/3/level.png");
+                world3.PosFG(-50);
+                chk = true;
+                x = 100;
+                y = 100;
+                bx = 600;
+                velocityX = 0;
+            }
+            if(x >= 610 && x <= 4790) bx=x;
         }
 
         if(Keyboard::isKeyPressed(Keyboard::Left) && y >= ground){
@@ -38,16 +47,12 @@ int main() {
                 ++pressUpCount;
                 if(pressUpCount==1) velocityY = -30;
         }
-        if(velocityX > 0){
-                tao.roll(velocityX);
-        }
-        if(velocityX < 0){
+        if(velocityX != 0){
                 tao.roll(velocityX);
         }
 
         View view(Vector2f(bx, 400), Vector2f(1200, 800));
-        if(level == 1) if(x >= 510 && x <= 2490) bx=x;
-        if(level == 3) if(x >= 610 && x <= 4790) bx=x;
+        if(level == 1) if(x >= 610 && x <= 2390) bx=x;
 
         string str = to_string(Mouse::getPosition(app).x);
         str.append(",");
@@ -58,7 +63,8 @@ int main() {
 
         tao.setPos(x, y);
         app.clear();
-        world.drawTo(app);
+        if(level == 1) world.drawTo(app);
+        if(level == 3) world3.drawTo(app);
         tao.drawTo(app);
         app.setView(view);
         app.display();

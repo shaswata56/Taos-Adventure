@@ -15,8 +15,9 @@ public:
         fg.loadFromFile(s);
         fg.setSmooth(true);
         sFG.setTexture(fg);
-        if(level == 1) sFG.setPosition(0, 195);
-        if(level == 3) sFG.setPosition(0, -50);
+    }
+    void PosFG(int w){
+        sFG.setPosition(0, w);
     }
     void LoadBG(string s){
         bg.loadFromFile(s);
