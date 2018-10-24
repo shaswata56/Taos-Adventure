@@ -5,7 +5,7 @@ float x = 200;
 float y = 200;
 int ground = 564;
 int water = 760;
-int level = 1;
+int level = 3;
 
 void updateGround(){
     if(level == 1){
@@ -15,7 +15,7 @@ void updateGround(){
         else if(x >= 1935 && x <= 2320 && y <= 143+336) ground = 143+336;
         else if(x > 2320 && x <= 3010 && y <= 143+433){
             ground = 143+433;
-            if(x > 3000) level=2;
+            if(x > 3000) level=3;
         }
         else ground = water;
     }

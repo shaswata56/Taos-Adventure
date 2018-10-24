@@ -13,11 +13,14 @@ private:
 public:
     void LoadFG(string s){
         fg.loadFromFile(s);
+        fg.setSmooth(true);
         sFG.setTexture(fg);
-        sFG.setPosition(0,195);
+        if(level == 1) sFG.setPosition(0, 195);
+        if(level == 3) sFG.setPosition(0, -50);
     }
     void LoadBG(string s){
         bg.loadFromFile(s);
+        bg.setSmooth(true);
         sBG.setTexture(bg);
     }
     void drawTo(RenderWindow& win){

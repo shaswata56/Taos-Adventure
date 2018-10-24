@@ -14,6 +14,7 @@ private:
 public:
     void LoadTao(string s){
         taoTex.loadFromFile(s);
+        taoTex.setSmooth(true);
         sTao.setTexture(taoTex);
         sTao.setScale(0.1,0.1);
         sTao.setOrigin(300,300);
