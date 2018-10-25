@@ -16,7 +16,8 @@ public:
         taoTex.loadFromFile(s);
         sTao.setTexture(taoTex);
         sTao.setScale(0.1,0.1);
-        sTao.setOrigin(300,300);
+        FloatRect taoBound = sTao.getLocalBounds();
+        sTao.setOrigin(taoBound.width/2,taoBound.height/2);
     }
     void drawTo(RenderWindow& win){
         win.draw(sTao);
