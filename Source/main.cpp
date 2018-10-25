@@ -9,8 +9,8 @@ int main() {
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
     tao.LoadTao("Resource/img/Object/ball.png");
-    world.LoadBG("Resource/img/BG/bgscr.png");
-    world.LoadFG("Resource/img/BG/12.png");
+    world.LoadBG("Resource/Levels/1/bg.png");
+    world.LoadFG("Resource/Levels/1/fg.png");
     int s = 15, bx=500;
     //ground=621;
     while (app.isOpen())
