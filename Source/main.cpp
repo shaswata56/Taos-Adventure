@@ -5,14 +5,15 @@ Tao tao;
 World world;
 
 int main() {
-    RenderWindow app(VideoMode(1000,750), "Pos:");
+    RenderWindow app(VideoMode(1000,750), "Tao's Adventure");
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
     tao.LoadTao("Resource/img/Object/ball.png");
     world.LoadBG("Resource/Levels/1/bg.png");
     world.LoadFG("Resource/Levels/1/fg.png");
-    int s = 15, bx=500;
-    //ground=621;
+
+    int s = 15, bx=500;                                 //S = Movement Speed, bx = View Control
+
     while (app.isOpen())
     {
         Event e;
@@ -41,11 +42,6 @@ int main() {
 
         View view(Vector2f(bx, 375), Vector2f(1000, 750));
         if(x >= 510 && x <= 2490) bx=x;
-
-        string str = to_string(Mouse::getPosition(app).x);
-        str.append(",");
-        str.append(to_string(Mouse::getPosition(app).y));
-        app.setTitle(str);
 
         updateMovement();
 
