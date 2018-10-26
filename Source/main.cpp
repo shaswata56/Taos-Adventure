@@ -2,7 +2,7 @@
 #include "../Header/world.hpp"
 
 Tao tao;
-World world, world3;
+World world, world2, world3;
 
 int main() {
     RenderWindow app(VideoMode(1200,800), "Pos:");
@@ -13,7 +13,6 @@ int main() {
     world.LoadFG("Resource/img/BG/12.png");
     world.PosFG(195+49);
     int s = 15, bx=600;
-    bool chk=false;
 
     while (app.isOpen())
     {
@@ -24,10 +23,23 @@ int main() {
             }
         }
 
-        if(level == 3){
+        if(level == 2){
             if(chk == false){
-                world3.LoadBG("Resource/img/3/bg.png");
-                world3.LoadFG("Resource/img/3/level.png");
+                world2.LoadBG("Resource/Levels/2/bg.png");
+                world2.LoadFG("Resource/Levels/2/fg.png");
+                world2.PosFG(55);
+                chk = true;
+                x = 100;
+                y = 400;
+                bx = 600;
+                velocityX = 0;
+            }
+            if(x >= 610 && x <= 4480) bx=x;
+        }
+        else if(level == 3){
+            if(chk == false){
+                world3.LoadBG("Resource/Levels/3/bg.png");
+                world3.LoadFG("Resource/Levels/3/fg.png");
                 world3.PosFG(-50);
                 chk = true;
                 x = 100;
@@ -35,7 +47,7 @@ int main() {
                 bx = 600;
                 velocityX = 0;
             }
-            if(x >= 610 && x <= 4790) bx=x;
+            if(x >= 610 && x <= 4770) bx=x;
         }
 
         if(Keyboard::isKeyPressed(Keyboard::Left) && y >= ground){
@@ -60,7 +72,8 @@ int main() {
         tao.setPos(x, y);
         app.clear();
         if(level == 1) world.drawTo(app);
-        if(level == 3) world3.drawTo(app);
+        else if(level == 2) world2.drawTo(app);
+        else if(level == 3) world3.drawTo(app);
         tao.drawTo(app);
         app.setView(view);
         app.display();
