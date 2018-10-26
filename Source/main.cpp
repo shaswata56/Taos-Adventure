@@ -5,7 +5,6 @@ Tao tao;
 World world, world3;
 
 int main() {
-<<<<<<< HEAD
     RenderWindow app(VideoMode(1200,800), "Pos:");
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
@@ -15,17 +14,7 @@ int main() {
     world.PosFG(195+49);
     int s = 15, bx=600;
     bool chk=false;
-=======
-    RenderWindow app(VideoMode(1000,750), "Tao's Adventure");
-    app.setFramerateLimit(30);
-    app.setVerticalSyncEnabled(true);
-    tao.LoadTao("Resource/img/Object/ball.png");
-    world.LoadBG("Resource/Levels/1/bg.png");
-    world.LoadFG("Resource/Levels/1/fg.png");
 
-    int s = 15, bx=500;                                 //S = Movement Speed, bx = View Control
-
->>>>>>> cba0a56e113201f3084e159dacd734ca3bce6913
     while (app.isOpen())
     {
         Event e;

@@ -19,16 +19,6 @@ void updateGround(){
         }
         else ground = water;
     }
-<<<<<<< HEAD
-    else if(level == 3){
-        if(x > 0 && x <= 395 && y <= 460) ground = 460;
-        else if(x >= 490 && x <= 885 && y <= 315) ground = 315;
-        else if(x >= 1119 && x <= 1520 && y <= 170) ground = 170;
-        else if(x >= 1320 && x <= 1584 && y <= 470 && y > 170) ground = 470;
-        else if(x >= 1585 && x <= 1840 && y <= 590 && y > 480) ground = 590;
-        else if(x > 2130 && x <= 2780 && y <= 500 && y > 320) ground = 500;
-        else if(x > 2630 && x <= 3025 && y <= 320) ground = 320;
-=======
     else if(level == 2){
         if(x > 38 && x <= 440 && y <= 652) ground = 652;
         else if(x >= 688 && x <= 1192 && y <= 500) ground = 500;
@@ -41,7 +31,16 @@ void updateGround(){
         else if(x >= 4138 && x <= 4542 && y <= 500) ground = 500;
         else if(x >= 4688 && x < 5000 && y <= 312) ground = 312;
         else if(x>5000) level=3;
->>>>>>> cba0a56e113201f3084e159dacd734ca3bce6913
+        else ground = water;
+    }
+    else if(level == 3){
+        if(x > 0 && x <= 395 && y <= 460) ground = 460;
+        else if(x >= 490 && x <= 885 && y <= 315) ground = 315;
+        else if(x >= 1119 && x <= 1520 && y <= 170) ground = 170;
+        else if(x >= 1320 && x <= 1584 && y <= 470 && y > 170) ground = 470;
+        else if(x >= 1585 && x <= 1840 && y <= 590 && y > 480) ground = 590;
+        else if(x > 2130 && x <= 2780 && y <= 500 && y > 320) ground = 500;
+        else if(x > 2630 && x <= 3025 && y <= 320) ground = 320;
         else ground = water;
     }
 }
