@@ -1,18 +1,16 @@
 #include "../Header/tao.hpp"
 #include "../Header/world.hpp"
+#include "../Header/control.hpp"
 
 Tao tao;
-World world, world2, world3;
+World world1, world2, world3;
 
-int main() {
+int game() {
     RenderWindow app(VideoMode(1200,800), "Pos:");
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
     tao.LoadTao("Resource/img/Object/ball.png");
-    world.LoadBG("Resource/img/BG/bgscr.png");
-    world.LoadFG("Resource/img/BG/12.png");
-    world.PosFG(195+49);
-    int s = 15, bx=600;
+    int bx=600;
 
     while (app.isOpen())
     {
@@ -23,7 +21,20 @@ int main() {
             }
         }
 
-        if(level == 2){
+        if(level == 1){
+            if(chk == false){
+                world1.LoadBG("Resource/Levels/1/bg.png");
+                world1.LoadFG("Resource/Levels/1/fg.png");
+                world1.PosFG(195+45);
+                chk = true;
+                x = 100;
+                y = 400;
+                bx = 600;
+                velocityX = 0;
+            }
+            if(x >= 610 && x <= 2390) bx=x;
+        }
+        else if(level == 2){
             if(chk == false){
                 world2.LoadBG("Resource/Levels/2/bg.png");
                 world2.LoadFG("Resource/Levels/2/fg.png");
@@ -34,7 +45,7 @@ int main() {
                 bx = 600;
                 velocityX = 0;
             }
-            if(x >= 610 && x <= 4480) bx=x;
+            if(x >= 610 && x <= 4380) bx=x;
         }
         else if(level == 3){
             if(chk == false){
@@ -50,31 +61,18 @@ int main() {
             if(x >= 610 && x <= 4770) bx=x;
         }
 
-        if(Keyboard::isKeyPressed(Keyboard::Left) && y >= ground){
-            tao.RolnRun(-s);
-        }
-        else if(Keyboard::isKeyPressed(Keyboard::Right) && y >= ground){
-            tao.RolnRun(s);
-        }
-        if(Keyboard::isKeyPressed(Keyboard::Up) && pressUpCount == 0){
-                ++pressUpCount;
-                if(pressUpCount==1) velocityY = -30;
-        }
-        if(velocityX != 0){
-                tao.roll(velocityX);
-        }
+        user_interact(tao);
 
         View view(Vector2f(bx, 400), Vector2f(1200, 800));
-        if(level == 1) if(x >= 610 && x <= 2390) bx=x;
 
         updateMovement();
 
         tao.setPos(x, y);
         app.clear();
-        if(level == 1) world.drawTo(app);
+        if(level == 1) world1.drawTo(app);
         else if(level == 2) world2.drawTo(app);
         else if(level == 3) world3.drawTo(app);
-        tao.drawTo(app);
+        if(!(level == 3 && x > 5000)) tao.drawTo(app);
         app.setView(view);
         app.display();
     }
