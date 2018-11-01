@@ -9,7 +9,7 @@ int game() {
     RenderWindow app(VideoMode(1200,800), "Pos:");
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
-    tao.LoadTao("Resource/img/Object/ball.png");
+    tao.LoadTao("Resource/Levels/co/ball.png");
     int bx=600;
 
     while (app.isOpen())
