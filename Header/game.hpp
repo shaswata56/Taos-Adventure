@@ -6,7 +6,7 @@ Tao tao;
 World world1, world2, world3;
 
 int game() {
-    RenderWindow app(VideoMode(1200,800), "Pos:");
+    RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
     tao.LoadTao("Resource/Levels/co/ball.png");
