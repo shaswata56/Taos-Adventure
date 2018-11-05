@@ -2,7 +2,7 @@
 #include "../Scenes/game.hpp"
 #include "../Scenes/menu.hpp"
 
-int updadeScene() {
+int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);

@@ -2,6 +2,6 @@
 
 int main()
 {
-    updadeScene();
+    updateScene();
     return 0;
 }

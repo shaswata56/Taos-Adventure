@@ -1,6 +1,5 @@
 #ifndef GAMEPLAY_HPP_INCLUDED
 #define GAMEPLAY_HPP_INCLUDED
-#include "../Header/scenes.hpp"
 #include "../Header/tao.hpp"
 #include "../Header/world.hpp"
 #include "../Header/control.hpp"
@@ -15,7 +14,6 @@ void game(RenderWindow &app) {
 
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/ball.png");
-        int bx=600;
         gameStarted = false;
     }
     if(level == 1){

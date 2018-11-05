@@ -1,8 +1,8 @@
 #ifndef TAO_HPP_INCLUDED
 #define TAO_HPP_INCLUDED
-#include <bits/stdc++.h>
-#include <SFML/Graphics.hpp>
-#include "physX.hpp"
+#include<bits/stdc++.h>
+#include<SFML/Graphics.hpp>
+#include "../Header/physX.hpp"
 using namespace std;
 using namespace sf;
 
