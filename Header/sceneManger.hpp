@@ -1,10 +1,12 @@
-#include "../Header/gamePlay.hpp"
-
+#include "../Header/scenes.hpp"
+#include "../Scenes/game.hpp"
+#include "../Scenes/menu.hpp"
 
 int updadeScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
     app.setFramerateLimit(30);
     app.setVerticalSyncEnabled(true);
+    currentScene = mainMenu;
 
     while (app.isOpen())
     {
@@ -14,9 +16,17 @@ int updadeScene() {
                 app.close();
             }
         }
-
         app.clear();
-        game(app);
+
+        switch(currentScene){
+        case gamePlay:
+            game(app);
+            break;
+        case mainMenu:
+            menu(app);
+            break;
+        }
+
         app.display();
     }
     return 0;
