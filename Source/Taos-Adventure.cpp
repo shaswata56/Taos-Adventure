@@ -1,7 +1,7 @@
-#include "../Header/game.hpp"
+#include "../Header/sceneManger.hpp"
 
 int main()
 {
-    game();
+    updadeScene();
     return 0;
 }
