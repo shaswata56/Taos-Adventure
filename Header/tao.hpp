@@ -11,6 +11,7 @@ private:
     float val;
     Texture taoTex;
     Sprite sTao;
+
 public:
     void LoadTao(string s){
         taoTex.loadFromFile(s);

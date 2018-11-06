@@ -28,7 +28,19 @@ void updateMovement()
         velocityX += 1;
     }
 
-    updateGround();
+    switch(level){
+        case 1:
+            updateGround1();
+            break;
+        case 2:
+            updateGround2();
+            break;
+        case 3:
+            updateGround3();
+            break;
+        default:
+            break;
+    }
 
     velocityX += accelerationX*friction;
     velocityY += accelerationY*friction;

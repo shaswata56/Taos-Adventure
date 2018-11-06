@@ -11,7 +11,6 @@ int bx = 600;
 View view;
 
 void game(RenderWindow &app) {
-
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/ball.png");
         gameStarted = false;
