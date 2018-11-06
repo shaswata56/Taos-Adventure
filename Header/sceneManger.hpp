@@ -19,12 +19,14 @@ int updateScene() {
         app.clear();
 
         switch(currentScene){
-        case gamePlay:
-            game(app);
-            break;
-        case mainMenu:
-            menu(app);
-            break;
+            case gamePlay:
+                game(app);
+                break;
+            case mainMenu:
+                menu(app);
+                break;
+            default :
+                break;
         }
 
         app.display();

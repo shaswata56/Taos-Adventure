@@ -14,7 +14,7 @@ void menu(RenderWindow &app) {
     Text startGameText("Press Enter To Start Game", AmaticB, 40);
     startGameText.setOrigin(startGameText.getLocalBounds().width/2, startGameText.getLocalBounds().height/2);
     startGameText.setPosition(600, 400);
-    startGameText.setColor(Color::Yellow);
+    startGameText.setFillColor(Color::Yellow);
     app.draw(startGameText);
     if(Keyboard::isKeyPressed(Keyboard::Enter)) currentScene = gamePlay;
 }
