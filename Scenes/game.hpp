@@ -15,6 +15,10 @@ void game(RenderWindow &app) {
         tao.LoadTao("Resource/Levels/co/ball.png");
         gameStarted = false;
     }
+    if(tao.getpos().y > 800)
+    {
+        currentScene = gameOver;
+    }
     if(level == 1){
         if(chk == false){
             world1.LoadBG("Resource/Levels/1/bg.png");

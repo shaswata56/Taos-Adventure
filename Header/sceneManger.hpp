@@ -1,6 +1,7 @@
 #include "../Header/scenes.hpp"
 #include "../Scenes/game.hpp"
 #include "../Scenes/menu.hpp"
+#include "../Scenes/GameOver.hpp"
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
@@ -24,6 +25,9 @@ int updateScene() {
                 break;
             case mainMenu:
                 menu(app);
+                break;
+            case gameOver:
+                game_over(app);
                 break;
             default :
                 break;

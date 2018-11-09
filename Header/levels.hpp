@@ -4,7 +4,7 @@
 float x = 200;
 float y = 200;
 int ground = 564;
-int water = 760+50;
+int water = 900;
 int level = 1;
 bool chk=false;
 

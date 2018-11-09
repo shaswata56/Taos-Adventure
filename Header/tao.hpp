@@ -33,6 +33,9 @@ public:
     void roll(float val){
         sTao.rotate(val);
     }
+    auto getpos(){
+        return sTao.getPosition();
+    }
 };
 
 #endif // TAO_HPP_INCLUDED
