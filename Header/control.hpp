@@ -14,6 +14,7 @@ void user_interact(Tao &tao)
     }
     if(Keyboard::isKeyPressed(Keyboard::Up) && pressUpCount == 0){
             ++pressUpCount;
+            tao.kick();
             if(pressUpCount==1) velocityY = -30;
     }
     if(velocityX != 0){
