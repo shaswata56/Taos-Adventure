@@ -2,7 +2,7 @@
 #define CONTROL_H_INCLUDED
 #include "../Header/tao.hpp"
 
-int s =15;
+int s =10;
 
 void user_interact(Tao &tao)
 {
@@ -19,6 +19,10 @@ void user_interact(Tao &tao)
     }
     if(velocityX != 0){
             tao.roll(velocityX);
+    }
+    if(Keyboard::isKeyPressed(Keyboard::Escape)){
+        while(!Keyboard::isKeyPressed(Keyboard::Backspace)){
+        }
     }
 }
 

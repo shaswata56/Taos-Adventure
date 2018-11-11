@@ -9,7 +9,7 @@ int level = 1;
 bool chk=false;
 
 void updateGround1(){
-    if(x > 0 && x <= 500 && y <= 564+50) ground = 564+50;
+    if(x > 0 && x <= 500 && y <= 564+51) ground = 564+51;
     else if(x >= 835 && x <= 1349 && y <= 470+50) ground = 470+50;
     else if(x >= 1505 && x <= 1900 && y <= 143+142+50) ground = 143+142+50;
     else if(x >= 1935 && x <= 2320 && y <= 143+336+50) ground = 143+336+50;

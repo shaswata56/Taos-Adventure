@@ -7,7 +7,7 @@ float velocityX = 0;
 float velocityY = 0;
 float accelerationX = 0;
 float accelerationY = 0;
-float gravity = 1.9;
+float gravity = 1.4;
 int pressUpCount=0;
 
 void updateMovement()
