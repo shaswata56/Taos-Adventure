@@ -21,7 +21,10 @@ void user_interact(Tao &tao)
             tao.roll(velocityX);
     }
     if(Keyboard::isKeyPressed(Keyboard::Escape)){
-        while(!Keyboard::isKeyPressed(Keyboard::Backspace)){
+        Clock clk;
+        while(!(clk.getElapsedTime().asSeconds() >= 100000)){
+                if(Keyboard::isKeyPressed(Keyboard::Backspace))
+                    break;
         }
     }
 }
