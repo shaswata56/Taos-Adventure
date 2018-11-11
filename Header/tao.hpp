@@ -2,6 +2,7 @@
 #define TAO_HPP_INCLUDED
 #include<bits/stdc++.h>
 #include<SFML/Graphics.hpp>
+#include<SFML/Audio.hpp>
 #include "../Header/physX.hpp"
 using namespace std;
 using namespace sf;
@@ -11,6 +12,8 @@ private:
     float val;
     Texture taoTex;
     Sprite sTao;
+    SoundBuffer kicksb;
+    Sound kickwav;
 
 public:
     void LoadTao(string s){
@@ -20,6 +23,7 @@ public:
         sTao.setScale(0.1,0.1);
         FloatRect taoBound = sTao.getLocalBounds();
         sTao.setOrigin(taoBound.width/2,taoBound.height/2);
+        kicksb.loadFromFile("Resource/Levels/co/kick.wav");
     }
     void drawTo(RenderWindow& win){
         win.draw(sTao);
@@ -32,6 +36,10 @@ public:
     }
     void roll(float val){
         sTao.rotate(val);
+    }
+    void kick(){
+        kickwav.setBuffer(kicksb);
+        kickwav.play();
     }
     auto getpos(){
         return sTao.getPosition();
