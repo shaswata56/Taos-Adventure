@@ -2,12 +2,19 @@
 #include "../Scenes/game.hpp"
 #include "../Scenes/menu.hpp"
 #include "../Scenes/GameOver.hpp"
+#include "../Scenes/story.hpp"
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
-    app.setFramerateLimit(30);
-    app.setVerticalSyncEnabled(true);
+    app.setFramerateLimit(60);
+    app.setVerticalSyncEnabled(false);
     currentScene = mainMenu;
+    Font AmaticB;
+    AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
+    Text endGameText("Game Over", AmaticB, 70);
+    endGameText.setOrigin(endGameText.getLocalBounds().width/2, endGameText.getLocalBounds().height/2);
+    endGameText.setPosition(600, 400);
+    endGameText.setFillColor(Color::Red);
 
     while (app.isOpen())
     {
@@ -26,8 +33,11 @@ int updateScene() {
             case mainMenu:
                 menu(app);
                 break;
+            case storyLine:
+                story(app);
+                break;
             case gameOver:
-                game_over(app);
+                game_over(app, endGameText);
                 break;
             default :
                 break;

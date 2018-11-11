@@ -4,11 +4,11 @@
 /// This header is added to update the scene from any Scene
 
 enum Scene{
-    intro,
     mainMenu,
     gamePlay,
     gameOver,
-    pauseMenu
+    addedLater,
+    storyLine
 } currentScene;
 
 #endif // SCENES_HPP_INCLUDED

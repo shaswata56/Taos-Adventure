@@ -41,7 +41,7 @@ public:
         kickwav.setBuffer(kicksb);
         kickwav.play();
     }
-    auto getpos(){
+    Vector2f getpos(){
         return sTao.getPosition();
     }
 };

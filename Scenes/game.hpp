@@ -17,6 +17,12 @@ void game(RenderWindow &app) {
     }
     if(tao.getpos().y > 800)
     {
+        level = 1;
+        chk = false;
+        x = 100;
+        y = 400;
+        bx = 600;
+        velocityX = 0;
         currentScene = gameOver;
     }
     if(level == 1){

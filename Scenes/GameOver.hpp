@@ -7,13 +7,7 @@
 using namespace sf;
 using namespace std;
 
-void game_over(RenderWindow &app) {
-    Font AmaticB;
-    AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
-    Text endGameText("Game Over", AmaticB, 50);
-    endGameText.setOrigin(endGameText.getLocalBounds().width/2, endGameText.getLocalBounds().height/2);
-    endGameText.setPosition(600, 400);
-    endGameText.setFillColor(Color::Red);
+void game_over(RenderWindow &app,Text &endGameText){
     app.draw(endGameText);
     if(Keyboard::isKeyPressed(Keyboard::Backspace)) currentScene = mainMenu;
 }
