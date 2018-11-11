@@ -17,10 +17,10 @@ void menu(RenderWindow &app){
     Font AmaticB;
     AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
 
-    Text startGameText("StartGame", AmaticB, 50);
-    Text storyLineText("Storyline", AmaticB, 50);
-    Text addedLaterText("What\'ll be added later?", AmaticB, 50);
-    Text exitText("Exit", AmaticB, 50);
+    Text startGameText("StartGame", AmaticB, 60);
+    Text storyLineText("Storyline", AmaticB, 60);
+    Text addedLaterText("What\'ll be added later?", AmaticB, 60);
+    Text exitText("Exit", AmaticB, 60);
 
     startGameText.setOrigin(startGameText.getLocalBounds().width/2, startGameText.getLocalBounds().height/2);
     storyLineText.setOrigin(storyLineText.getLocalBounds().width/2, storyLineText.getLocalBounds().height/2);
