@@ -8,13 +8,8 @@ int updateScene() {
     app.setFramerateLimit(60);
     app.setVerticalSyncEnabled(false);
     currentScene = mainMenu;
-
     Font AmaticB;
     AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
-    Text startGameText("Press Enter To Start Game", AmaticB, 70);
-    startGameText.setOrigin(startGameText.getLocalBounds().width/2, startGameText.getLocalBounds().height/2);
-    startGameText.setPosition(600, 400);
-    startGameText.setFillColor(Color::Yellow);
     Text endGameText("Game Over", AmaticB, 70);
     endGameText.setOrigin(endGameText.getLocalBounds().width/2, endGameText.getLocalBounds().height/2);
     endGameText.setPosition(600, 400);
@@ -35,7 +30,7 @@ int updateScene() {
                 game(app);
                 break;
             case mainMenu:
-                menu(app, startGameText);
+                menu(app);
                 break;
             case gameOver:
                 game_over(app, endGameText);

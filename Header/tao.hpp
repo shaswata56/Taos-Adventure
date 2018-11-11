@@ -33,7 +33,7 @@ public:
     void roll(float val){
         sTao.rotate(val);
     }
-    auto getpos(){
+    Vector2f getpos(){
         return sTao.getPosition();
     }
 };
