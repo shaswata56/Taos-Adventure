@@ -76,7 +76,7 @@ void menu(RenderWindow &app){
             currentScene = storyLine;
             break;
         case 2:
-            currentScene = gameOver;
+            currentScene = addedLater;
             break;
         case 3:
             app.close();

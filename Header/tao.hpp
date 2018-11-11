@@ -17,7 +17,7 @@ public:
         taoTex.loadFromFile(s);
         taoTex.setSmooth(true);
         sTao.setTexture(taoTex);
-        sTao.setScale(0.1,0.1);
+//        sTao.setScale(0.1,0.1);
         FloatRect taoBound = sTao.getLocalBounds();
         sTao.setOrigin(taoBound.width/2,taoBound.height/2);
     }

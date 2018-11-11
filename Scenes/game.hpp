@@ -12,7 +12,7 @@ View view;
 
 void game(RenderWindow &app) {
     if(gameStarted) {
-        tao.LoadTao("Resource/Levels/co/ball.png");
+        tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
     }
     if(tao.getpos().y > 800)

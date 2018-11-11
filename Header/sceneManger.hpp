@@ -3,6 +3,7 @@
 #include "../Scenes/menu.hpp"
 #include "../Scenes/GameOver.hpp"
 #include "../Scenes/story.hpp"
+#include "../Scenes/addedLater.hpp"
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
@@ -35,6 +36,9 @@ int updateScene() {
                 break;
             case storyLine:
                 story(app);
+                break;
+            case addedLater:
+                addLater(app);
                 break;
             case gameOver:
                 game_over(app, endGameText);
