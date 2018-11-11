@@ -73,7 +73,7 @@ void menu(RenderWindow &app){
             currentScene = gamePlay;
             break;
         case 1:
-            currentScene = gamePlay;
+            currentScene = storyLine;
             break;
         case 2:
             currentScene = gameOver;
