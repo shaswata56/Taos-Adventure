@@ -7,10 +7,6 @@ But it won't work, until you call *initEnemy* function for all of the enemies wi
 of the floats starting point, ending point and a height..
 The enemy will roam around from the starting point to the ending point in the given height..
 
-ISSUES
-=======
-updateEnemy Function ta dekh
-
 */
 
 
@@ -27,7 +23,7 @@ private:
     Sprite enemySprite;
 public:
     string enemyLoc = "Resource/Levels/co/enemy.png";
-    int directionOfEnemy = 1;
+    bool directionOfEnemy;
     float startPoint=-100.0f, endPoint=-100.0f, height=-100.0f;
     void initEnemy(float startP, float endP, float heightP){
         enemmyTexture.loadFromFile(enemyLoc);
@@ -38,19 +34,19 @@ public:
         this->height=heightP;
         enemySprite.setPosition(startPoint, height);
     }
-    void updateEnemy(){                             /// Eije Update Function... Ekhanei Kono Vejal korchi...
+    void updateEnemy(){
         float enemyX = enemySprite.getPosition().x;
         float enemyY = enemySprite.getPosition().y;
-        if(this->directionOfEnemy = 1) {
-            enemySprite.move(1,0);
+        if(this->directionOfEnemy) {
+            enemySprite.move(5,0);
             if(enemyX>=this->endPoint){
-                this->directionOfEnemy = -1;
+                this->directionOfEnemy = false;
             }
         }
         else {
-            enemySprite.move(-1,0);
+            enemySprite.move(-5,0);
             if(enemyX<=this->startPoint){
-                this->directionOfEnemy = 1;
+                this->directionOfEnemy=true;
             }
         }
     }

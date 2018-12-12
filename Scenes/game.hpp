@@ -15,7 +15,7 @@ Enemy TheBoss;
 
 void game(RenderWindow &app) {
     if(gameStarted) {
-        TheBoss.initEnemy(1505.0f, 1905.0f, 470.0f);
+        TheBoss.initEnemy(1505.0f, 1850.0f, 330.0f);
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
     }
