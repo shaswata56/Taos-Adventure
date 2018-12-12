@@ -7,6 +7,10 @@ But it won't work, until you call *initEnemy* function for all of the enemies wi
 of the floats starting point, ending point and a height..
 The enemy will roam around from the starting point to the ending point in the given height..
 
+ISSUES
+=======
+updateEnemy Function ta dekh
+
 */
 
 
