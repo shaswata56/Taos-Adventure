@@ -3,15 +3,19 @@
 #include "../Header/tao.hpp"
 #include "../Header/world.hpp"
 #include "../Header/control.hpp"
+#include "../Header/enemy.hpp"
 
 Tao tao;
 World world1, world2, world3;
 bool gameStarted = true;
 int bx = 600;
 View view;
+///Testing Enemy Here:
+Enemy TheBoss;
 
 void game(RenderWindow &app) {
     if(gameStarted) {
+        TheBoss.initEnemy(1505.0f, 1905.0f, 470.0f);
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
     }
@@ -69,11 +73,13 @@ void game(RenderWindow &app) {
     view.setCenter(Vector2f(bx, 400));
     view.setSize(Vector2f(1200, 800));
     updateMovement();
+    TheBoss.updateEnemy();
     tao.setPos(x, y);
     if(level == 1) world1.drawTo(app);
     else if(level == 2) world2.drawTo(app);
     else if(level == 3) world3.drawTo(app);
     if(!(level == 3 && x > 5000)) tao.drawTo(app);
+    TheBoss.drawEnemy(app);
     app.setView(view);
 }
 
