@@ -36,7 +36,6 @@ public:
     }
     void updateEnemy(){
         float enemyX = enemySprite.getPosition().x;
-        float enemyY = enemySprite.getPosition().y;
         if(this->directionOfEnemy) {
             enemySprite.move(5,0);
             if(enemyX>=this->endPoint){

@@ -70,7 +70,6 @@ void game(RenderWindow &app) {
     }
     user_interact(tao);
     View view(Vector2f(bx, 400), Vector2f(1200, 800));
-    printf("%d", TheBoss.directionOfEnemy);
     view.setCenter(Vector2f(bx, 400));
     view.setSize(Vector2f(1200, 800));
     updateMovement();
