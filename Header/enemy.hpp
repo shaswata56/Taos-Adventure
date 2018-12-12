@@ -28,24 +28,25 @@ public:
     void initEnemy(float startP, float endP, float heightP){
         enemmyTexture.loadFromFile(enemyLoc);
         enemySprite.setTexture(enemmyTexture);
-        this.startPoint=startP;
-        this.endPoint=endP;
-        this.height=heightP;
+        enemySprite.scale(.1,.1);
+        this->startPoint=startP;
+        this->endPoint=endP;
+        this->height=heightP;
         enemySprite.setPosition(startPoint, height);
     }
-    void updateEnemy(){
+    void updateEnemy(){                             /// Eije Update Function... Ekhanei Kono Vejal korchi...
         float enemyX = enemySprite.getPosition().x;
         float enemyY = enemySprite.getPosition().y;
-        if(this.directionOfEnemy = 1) {
-            enemySprite.move(5,0);
-            if(enemyX>this.startPoint){
-                this.directionOfEnemy = -1;
+        if(this->directionOfEnemy = 1) {
+            enemySprite.move(1,0);
+            if(enemyX>=this->endPoint){
+                this->directionOfEnemy = -1;
             }
         }
         else {
-            enemySprite.move(-5,0);
-            if(enemyX<this.endPoint){
-                this.directionOfEnemy = 1;
+            enemySprite.move(-1,0);
+            if(enemyX<=this->startPoint){
+                this->directionOfEnemy = 1;
             }
         }
     }
