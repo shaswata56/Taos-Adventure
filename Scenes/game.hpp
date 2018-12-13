@@ -41,6 +41,7 @@ void game(RenderWindow &app) {
             velocityX = 0;
         }
         if(x >= 610 && x <= 2390) bx=x;
+
     }
     else if(level == 2){
         if(chk == false){
@@ -73,13 +74,15 @@ void game(RenderWindow &app) {
     view.setCenter(Vector2f(bx, 400));
     view.setSize(Vector2f(1200, 800));
     updateMovement();
-    TheBoss.updateEnemy();
     tao.setPos(x, y);
-    if(level == 1) world1.drawTo(app);
+    if(level == 1){
+        TheBoss.updateEnemy();
+        world1.drawTo(app);
+        TheBoss.drawEnemy(app);
+    }
     else if(level == 2) world2.drawTo(app);
     else if(level == 3) world3.drawTo(app);
     if(!(level == 3 && x > 5000)) tao.drawTo(app);
-    TheBoss.drawEnemy(app);
     app.setView(view);
 }
 
