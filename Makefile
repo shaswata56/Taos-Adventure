@@ -1,8 +1,6 @@
 LIBS=-lsfml-graphics -lsfml-audio -lsfml-network -lsfml-window -lsfml-system
 
 all:
-	@echo "Installing Dependency"
-	sudo apt install libsfml-dev
 	@echo "** Building the game **"
 	g++ -c "Source/Taos-Adventure.cpp" -o Taos-Adventure.o
 	g++ -o Taos-Adventure Taos-Adventure.o $(LIBS)
