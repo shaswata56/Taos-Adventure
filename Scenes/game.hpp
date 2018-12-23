@@ -16,7 +16,6 @@ World world1, world2, world3;
 bool gameStarted = true;
 int bx = 600;
 View view;
-///Testing Enemy Here:
 Enemy shoytans[10];
 
 void MoiraGechi(){
@@ -31,7 +30,6 @@ void MoiraGechi(){
 
 void game(RenderWindow &app) {
     if(gameStarted) {
-        shoytans[9].initEnemy(1505.0f, 1850.0f, 330.0f);
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
     }
@@ -49,6 +47,8 @@ void game(RenderWindow &app) {
             y = 400;
             bx = 600;
             velocityX = 0;
+
+            shoytans[9].initEnemy(1505.0f, 1850.0f, 330.0f);
         }
         if(x >= 610 && x <= 2390) bx=x;
     }
@@ -67,8 +67,6 @@ void game(RenderWindow &app) {
             shoytans[1].initEnemy(1938, 2190, 268);
             shoytans[2].initEnemy(3088, 3390, 368);
             shoytans[3].initEnemy(4138, 4492, 505);
-
-
         }
         if(x >= 610 && x <= 4380) bx=x;
     }
@@ -126,4 +124,4 @@ void game(RenderWindow &app) {
 }
 
 
-#endif // GAMEPLAY_HPP_INCLUDED
+#endif
