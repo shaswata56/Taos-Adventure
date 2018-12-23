@@ -43,6 +43,9 @@ public:
     Vector2f getpos(){
         return sTao.getPosition();
     }
+    FloatRect getRect(){
+        return sTao.getGlobalBounds();
+    }
 };
 
 #endif // TAO_HPP_INCLUDED

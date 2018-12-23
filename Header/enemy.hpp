@@ -21,6 +21,7 @@ class Enemy{
 private:
     Texture enemmyTexture;
     Sprite enemySprite;
+    float moveSpeed=3;
 public:
     string enemyLoc = "Resource/Levels/co/enemy.png";
     bool directionOfEnemy;
@@ -29,28 +30,31 @@ public:
         enemmyTexture.loadFromFile(enemyLoc);
         enemySprite.setTexture(enemmyTexture);
         enemySprite.scale(.1,.1);
-        this->startPoint=startP;
-        this->endPoint=endP;
-        this->height=heightP;
+        startPoint=startP;
+        endPoint=endP;
+        height=heightP;
         enemySprite.setPosition(startPoint, height);
     }
     void updateEnemy(){
         float enemyX = enemySprite.getPosition().x;
-        if(this->directionOfEnemy) {
-            enemySprite.move(5,0);
-            if(enemyX>=this->endPoint){
-                this->directionOfEnemy = false;
+        if(directionOfEnemy) {
+            enemySprite.move(moveSpeed,0);
+            if(enemyX>=endPoint){
+                directionOfEnemy = false;
             }
         }
         else {
-            enemySprite.move(-5,0);
-            if(enemyX<=this->startPoint){
-                this->directionOfEnemy=true;
+            enemySprite.move(moveSpeed*(-1),0);
+            if(enemyX<=startPoint){
+                directionOfEnemy=true;
             }
         }
     }
     void drawEnemy(RenderWindow& window){
         window.draw(enemySprite);
+    }
+    FloatRect getRect(){
+        return enemySprite.getGlobalBounds();
     }
 };
 
