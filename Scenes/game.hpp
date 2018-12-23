@@ -1,3 +1,9 @@
+///             IMPORTANT NOTE               ///
+//============================================//
+/// ENEMY START POINT = PLATFORM START POINT ///
+/// ENEMY END POINT = PLATFORM END POINT -50 ///
+///    ENEMY HEIGHT = PLATFORM HEIGHT - 5    ///
+
 #ifndef GAMEPLAY_HPP_INCLUDED
 #define GAMEPLAY_HPP_INCLUDED
 #include "../Header/tao.hpp"
@@ -11,23 +17,27 @@ bool gameStarted = true;
 int bx = 600;
 View view;
 ///Testing Enemy Here:
-Enemy TheBoss;
+Enemy shoytans[10];
+
+void MoiraGechi(){
+    level = 1;
+    chk = false;
+    x = 100;
+    y = 400;
+    bx = 600;
+    velocityX = 0;
+    currentScene = gameOver;
+}
 
 void game(RenderWindow &app) {
     if(gameStarted) {
-        TheBoss.initEnemy(1505.0f, 1850.0f, 330.0f);
+        shoytans[9].initEnemy(1505.0f, 1850.0f, 330.0f);
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
     }
     if(tao.getpos().y > 800)
     {
-        level = 1;
-        chk = false;
-        x = 100;
-        y = 400;
-        bx = 600;
-        velocityX = 0;
-        currentScene = gameOver;
+        MoiraGechi();
     }
     if(level == 1){
         if(chk == false){
@@ -52,6 +62,13 @@ void game(RenderWindow &app) {
             y = 400;
             bx = 600;
             velocityX = 0;
+
+            shoytans[0].initEnemy(688, 1142, 505);
+            shoytans[1].initEnemy(1938, 2190, 268);
+            shoytans[2].initEnemy(3088, 3390, 368);
+            shoytans[3].initEnemy(4138, 4492, 505);
+
+
         }
         if(x >= 610 && x <= 4380) bx=x;
     }
@@ -74,11 +91,6 @@ void game(RenderWindow &app) {
     view.setSize(Vector2f(1200, 800));
     updateMovement();
     tao.setPos(x, y);
-    if(level == 1){
-        TheBoss.updateEnemy();
-        world1.drawTo(app);
-        TheBoss.drawEnemy(app);
-    }
 /*
 
     If player jumps over the enemy then the enemy will die otherwise the player will die when the player and enemy intersects.
@@ -86,15 +98,28 @@ void game(RenderWindow &app) {
     Now it's time to place the enemies at the right places.
 
 */
-    if(tao.getRect().intersects(TheBoss.getRect())){
-        if(TheBoss.getRect().top-tao.getRect().top>=30){
-            TheBoss.dead();
-            velocityY = -20;
+    for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
+        if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
+            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
+                shoytans[shoytanNumber].dead();
+                velocityY = -20;
+            }
+            else MoiraGechi();
         }
-        else currentScene = gameOver;
     }
 
-    else if(level == 2) world2.drawTo(app);
+    if(level == 1){
+        shoytans[9].updateEnemy();
+        world1.drawTo(app);
+        shoytans[9].drawEnemy(app);
+    }
+    else if(level == 2) {
+        world2.drawTo(app);
+        for(int shoytanNumber=0; shoytanNumber<4; shoytanNumber++){
+            shoytans[shoytanNumber].updateEnemy();
+            shoytans[shoytanNumber].drawEnemy(app);
+        }
+    }
     else if(level == 3) world3.drawTo(app);
     if(!(level == 3 && x > 5000)) tao.drawTo(app);
     app.setView(view);
