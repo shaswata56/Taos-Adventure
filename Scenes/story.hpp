@@ -7,7 +7,6 @@
 using namespace sf;
 
 void story(RenderWindow &app){
-
     Font AmaticB;
     AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
 

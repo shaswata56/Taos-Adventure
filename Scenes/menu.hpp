@@ -13,7 +13,6 @@ unsigned int menuSelection = 0;
     Clock menuClock;
 
 void menu(RenderWindow &app){
-
     Font AmaticB;
     AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
 

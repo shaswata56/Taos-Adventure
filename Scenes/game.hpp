@@ -41,7 +41,6 @@ void game(RenderWindow &app) {
             velocityX = 0;
         }
         if(x >= 610 && x <= 2390) bx=x;
-
     }
     else if(level == 2){
         if(chk == false){
@@ -91,7 +90,6 @@ void game(RenderWindow &app) {
 */
 
     if(tao.getRect().intersects(TheBoss.getRect())){
-
         if(TheBoss.getRect().top-tao.getRect().top>=30){
             printf("Yo Man!\n");
         }
