@@ -1,15 +1,3 @@
-/*
-
-READ IT FIRST
-==============
-To add enemy in levels, you have to first declare Enemies..
-But it won't work, until you call *initEnemy* function for all of the enemies with the parameters
-of the floats starting point, ending point and a height..
-The enemy will roam around from the starting point to the ending point in the given height..
-
-*/
-
-
 #ifndef ENEMY_HPP_INCLUDED
 #define ENEMY_HPP_INCLUDED
 #include<bits/stdc++.h>
@@ -22,6 +10,7 @@ private:
     Texture enemmyTexture;
     Sprite enemySprite;
     float moveSpeed=3;
+    bool alive = true;
 public:
     string enemyLoc = "Resource/Levels/co/enemy.png";
     bool directionOfEnemy;
@@ -36,25 +25,31 @@ public:
         enemySprite.setPosition(startPoint, height);
     }
     void updateEnemy(){
-        float enemyX = enemySprite.getPosition().x;
-        if(directionOfEnemy) {
-            enemySprite.move(moveSpeed,0);
-            if(enemyX>=endPoint){
-                directionOfEnemy = false;
+        if(alive){
+            float enemyX = enemySprite.getPosition().x;
+            if(directionOfEnemy) {
+                enemySprite.move(moveSpeed,0);
+                if(enemyX>=endPoint){
+                    directionOfEnemy = false;
+                }
+            }
+            else {
+                enemySprite.move(moveSpeed*(-1),0);
+                if(enemyX<=startPoint){
+                    directionOfEnemy=true;
+                }
             }
         }
-        else {
-            enemySprite.move(moveSpeed*(-1),0);
-            if(enemyX<=startPoint){
-                directionOfEnemy=true;
-            }
-        }
+        else enemySprite.setPosition(-200,-200);
     }
     void drawEnemy(RenderWindow& window){
-        window.draw(enemySprite);
+        if(alive) window.draw(enemySprite);
     }
     FloatRect getRect(){
         return enemySprite.getGlobalBounds();
+    }
+    void dead() {
+        alive = false;
     }
 };
 

@@ -79,8 +79,6 @@ void game(RenderWindow &app) {
         world1.drawTo(app);
         TheBoss.drawEnemy(app);
     }
-//    printf("%f\t%f\n%f\t%f\n\n",  tao.getRect().top, tao.getRect().height, TheBoss.getRect().top, TheBoss.getRect().height);
-
 /*
 
     If player jumps over the enemy then the enemy will die otherwise the player will die when the player and enemy intersects.
@@ -88,16 +86,13 @@ void game(RenderWindow &app) {
     Now it's time to place the enemies at the right places.
 
 */
-
     if(tao.getRect().intersects(TheBoss.getRect())){
         if(TheBoss.getRect().top-tao.getRect().top>=30){
-            printf("Yo Man!\n");
+            TheBoss.dead();
+            velocityY = -20;
         }
-        else {
-            printf("No Man! :( \n");
-        }
+        else currentScene = gameOver;
     }
-
 
     else if(level == 2) world2.drawTo(app);
     else if(level == 3) world3.drawTo(app);
