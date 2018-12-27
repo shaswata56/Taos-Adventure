@@ -123,5 +123,4 @@ void game(RenderWindow &app) {
     app.setView(view);
 }
 
-
 #endif

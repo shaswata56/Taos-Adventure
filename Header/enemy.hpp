@@ -9,15 +9,20 @@ class Enemy{
 private:
     Texture enemmyTexture;
     Sprite enemySprite;
+    SoundBuffer enemySoundBuffer;
+    Sound enemySound;
     float moveSpeed=3;
     bool alive = true;
 public:
     string enemyLoc = "Resource/Levels/co/enemy.png";
+    string morarSoundLoc = "Resource/Levels/co/die.ogg";
     bool directionOfEnemy;
     float startPoint=-100.0f, endPoint=-100.0f, height=-100.0f;
     void initEnemy(float startP, float endP, float heightP){
         enemmyTexture.loadFromFile(enemyLoc);
         enemySprite.setTexture(enemmyTexture);
+        enemySoundBuffer.loadFromFile(morarSoundLoc);
+        enemySound.setBuffer(enemySoundBuffer);
         enemySprite.scale(.1,.1);
         startPoint=startP;
         endPoint=endP;
@@ -49,6 +54,7 @@ public:
         return enemySprite.getGlobalBounds();
     }
     void dead() {
+        enemySound.play();
         alive = false;
     }
 };
