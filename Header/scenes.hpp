@@ -6,6 +6,7 @@
 enum Scene{
     mainMenu,
     gamePlay,
+    startingAnime,
     gameOver,
     addedLater,
     storyLine

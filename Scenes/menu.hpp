@@ -69,7 +69,7 @@ void menu(RenderWindow &app){
     if(Keyboard::isKeyPressed(Keyboard::Enter)) {
         switch(menuSelection) {
         case 0:
-            currentScene = gamePlay;
+            currentScene = startingAnime;
             break;
         case 1:
             currentScene = storyLine;
