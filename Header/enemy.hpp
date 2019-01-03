@@ -56,7 +56,7 @@ public:
     void dead() {
         enemySound.play();
         alive = false;
-    }
+    } 
 };
 
 #endif // ENEMY_HPP_INCLUDED

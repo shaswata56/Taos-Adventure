@@ -18,7 +18,7 @@ int bx = 600;
 View view;
 Enemy shoytans[10];
 
-void MoiraGechi(){
+void MoiraGechi(void){
     level = 1;
     chk = false;
     x = 100;
@@ -26,9 +26,11 @@ void MoiraGechi(){
     bx = 600;
     velocityX = 0;
     currentScene = gameOver;
+    //memset(shoytans, 0, sizeof(shoytans));
 }
 
 void game(RenderWindow &app) {
+
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
