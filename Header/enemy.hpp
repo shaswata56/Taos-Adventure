@@ -14,8 +14,8 @@ private:
     float moveSpeed=3;
     bool alive = true;
 public:
-    string enemyLoc = "Resource/Levels/co/enemy.png";
     string morarSoundLoc = "Resource/Levels/co/die.ogg";
+    string enemyLoc = "Resource/Levels/co/enemyGreen.png";
     bool directionOfEnemy;
     float startPoint=-100.0f, endPoint=-100.0f, height=-100.0f;
     void initEnemy(float startP, float endP, float heightP){
