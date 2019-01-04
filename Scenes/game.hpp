@@ -19,7 +19,7 @@ View view;
 Enemy shoytans[10];
 
 void MoiraGechi(void){
-    level = 1;
+    level = 3;
     chk = false;
     x = 100;
     y = 400;
