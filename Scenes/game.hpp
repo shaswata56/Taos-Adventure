@@ -19,18 +19,18 @@ View view;
 Enemy shoytans[10];
 
 void MoiraGechi(void){
-    level = 3;
+    world1.StopSFX();
+    world2.StopSFX();
+    level = 1;
     chk = false;
     x = 100;
     y = 400;
     bx = 600;
     velocityX = 0;
     currentScene = gameOver;
-    //memset(shoytans, 0, sizeof(shoytans));
 }
 
 void game(RenderWindow &app) {
-
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
@@ -44,27 +44,30 @@ void game(RenderWindow &app) {
             world1.LoadBG("Resource/Levels/1/bg.png");
             world1.LoadFG("Resource/Levels/1/fg.png");
             world1.PosFG(195+45);
+            world1.LoadSFX("Resource/Levels/1/day-sfx.ogg");
             chk = true;
             x = 100;
             y = 400;
             bx = 600;
             velocityX = 0;
-
+            world1.PlaySFX();
             shoytans[9].initEnemy(1505.0f, 1850.0f, 330.0f);
         }
         if(x >= 610 && x <= 2390) bx=x;
     }
     else if(level == 2){
         if(chk == false){
+            world1.StopSFX();
             world2.LoadBG("Resource/Levels/2/bg.png");
             world2.LoadFG("Resource/Levels/2/fg.png");
             world2.PosFG(55);
+            world2.LoadSFX("Resource/Levels/2/night-sfx.ogg");
             chk = true;
             x = 100;
             y = 400;
             bx = 600;
             velocityX = 0;
-
+            world2.PlaySFX();
             shoytans[0].initEnemy(688, 1142, 505);
             shoytans[1].initEnemy(1938, 2190, 268);
             shoytans[2].initEnemy(3088, 3390, 368);
@@ -74,6 +77,7 @@ void game(RenderWindow &app) {
     }
     else if(level == 3){
         if(chk == false){
+            world2.StopSFX();
             world3.LoadBG("Resource/Levels/3/bg.png");
             world3.LoadFG("Resource/Levels/3/fg.png");
             world3.PosFG(-50);
@@ -104,7 +108,9 @@ void game(RenderWindow &app) {
                 shoytans[shoytanNumber].dead();
                 velocityY = -20;
             }
-            else MoiraGechi();
+            else {
+                MoiraGechi();
+            }
         }
     }
 

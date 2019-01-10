@@ -10,6 +10,8 @@ class World{
 private:
     Texture fg, bg;
     Sprite sFG, sBG;
+    SoundBuffer bgbuff;
+    Sound   bgfx;
 public:
     void LoadFG(string s){
         fg.loadFromFile(s);
@@ -23,6 +25,17 @@ public:
         bg.loadFromFile(s);
         bg.setSmooth(true);
         sBG.setTexture(bg);
+    }
+    void LoadSFX(string s){
+        bgbuff.loadFromFile(s);
+        bgfx.setBuffer(bgbuff);
+        bgfx.setLoop(true);
+    }
+    void PlaySFX(){
+        bgfx.play();
+    }
+    void StopSFX(){
+        bgfx.stop();
     }
     void drawTo(RenderWindow& win){
         win.draw(sBG);

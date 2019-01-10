@@ -46,7 +46,10 @@ int updateScene() {
                 addLater(app);
                 break;
             case gameOver:
-                game_over(app, endGameText);
+                if(game_over(app, endGameText) == 1){
+                    app.close();
+                    return 1;
+                }
                 break;
             default :
                 break;

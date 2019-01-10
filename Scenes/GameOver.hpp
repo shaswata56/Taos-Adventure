@@ -7,14 +7,17 @@
 using namespace sf;
 using namespace std;
 
-void game_over(RenderWindow &app,Text &endGameText){
+int game_over(RenderWindow &app,Text &endGameText){
     //printf("Shotti moira gechi....");
 
     /// SHOTTI MORE GELEO GAMEOVER TEXT SHOW KORTECHE NA JOKHON ENEMY ER SATHE BARI KHAIYA MORE
     /// CHECK KORIS TO PROBLEM KOI
 
     app.draw(endGameText);
-    if(Keyboard::isKeyPressed(Keyboard::Backspace)) currentScene = mainMenu;
+    if(Keyboard::isKeyPressed(Keyboard::Backspace)) {
+    	return 1;
+    }
+    return 0;
 }
 
 #endif // GAMEOVER_HPP_INCLUDED
