@@ -31,6 +31,17 @@ void MoiraGechi(void){
 }
 
 void game(RenderWindow &app) {
+    for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
+        if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
+            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
+                shoytans[shoytanNumber].dead();
+                velocityY = -20;
+            }
+            else {
+                tao.setPos(0, 900);
+            }
+        }
+    }
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
@@ -102,17 +113,6 @@ void game(RenderWindow &app) {
     Now it's time to place the enemies at the right places.
 
 */
-    for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
-        if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
-            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
-                shoytans[shoytanNumber].dead();
-                velocityY = -20;
-            }
-            else {
-                tao.setPos(0, 900);
-            }
-        }
-    }
 
     if(level == 1){
         shoytans[9].updateEnemy();
