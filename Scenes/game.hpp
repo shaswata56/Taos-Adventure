@@ -110,24 +110,7 @@ void game(RenderWindow &app) {
     updateMovement();
     tao.setPos(x, y);
 
-/*
 
-    If player jumps over the enemy then the enemy will die otherwise the player will die when the player and enemy intersects.
-    I took 30 as a differences of the top positions of them after tweaking some other values.
-    Now it's time to place the enemies at the right places.
-
-*/
-    for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
-        if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
-            if(shoytans[shoytanNumber].getRect().top - tao.getRect().top >= 30){
-                shoytans[shoytanNumber].dead();
-                velocityY = -20;
-            }
-            else {
-                MoiraGechi();
-            }
-        }
-    }
     if(level == 1){
         shoytans[9].updateEnemy();
         world1.drawTo(app);
