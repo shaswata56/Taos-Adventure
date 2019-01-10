@@ -109,7 +109,7 @@ void game(RenderWindow &app) {
                 velocityY = -20;
             }
             else {
-                MoiraGechi();
+                tao.setPos(0, 900);
             }
         }
     }
