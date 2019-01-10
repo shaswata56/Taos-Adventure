@@ -68,6 +68,9 @@ void game(RenderWindow &app) {
             shoytans[9].initEnemy(1505.0f, 1850.0f, 330.0f);
         }
         if(x >= 610 && x <= 2390) bx=x;
+        shoytans[9].updateEnemy();
+        world1.drawTo(app);
+        shoytans[9].drawEnemy(app);
     }
     else if(level == 2){
         if(chk == false){
@@ -88,6 +91,11 @@ void game(RenderWindow &app) {
             shoytans[3].initEnemy(4138, 4492, 505);
         }
         if(x >= 610 && x <= 4380) bx=x;
+        world2.drawTo(app);
+        for(int shoytanNumber=0; shoytanNumber<4; shoytanNumber++){
+            shoytans[shoytanNumber].updateEnemy();
+            shoytans[shoytanNumber].drawEnemy(app);
+        }
     }
     else if(level == 3){
         if(chk == false){
@@ -102,6 +110,7 @@ void game(RenderWindow &app) {
             velocityX = 0;
         }
         if(x >= 610 && x <= 4770) bx=x;
+        world3.drawTo(app);
     }
     user_interact(tao);
     View view(Vector2f(bx, 400), Vector2f(1200, 800));
@@ -110,20 +119,6 @@ void game(RenderWindow &app) {
     updateMovement();
     tao.setPos(x, y);
 
-
-    if(level == 1){
-        shoytans[9].updateEnemy();
-        world1.drawTo(app);
-        shoytans[9].drawEnemy(app);
-    }
-    else if(level == 2) {
-        world2.drawTo(app);
-        for(int shoytanNumber=0; shoytanNumber<4; shoytanNumber++){
-            shoytans[shoytanNumber].updateEnemy();
-            shoytans[shoytanNumber].drawEnemy(app);
-        }
-    }
-    else if(level == 3) world3.drawTo(app);
     if(!(level == 3 && x > 5000)) tao.drawTo(app);
     app.setView(view);
 }
