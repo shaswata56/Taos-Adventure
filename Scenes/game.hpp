@@ -38,6 +38,17 @@ void game(RenderWindow &app) {
         world1.StopSFX();
         world2.StopSFX();
     }
+    for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
+        if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
+            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
+                shoytans[shoytanNumber].dead();
+                velocityY = -20;
+            }
+            else {
+                MoiraGechi();
+            }
+        }
+    }
     if(tao.getpos().y > 800)
     {
         MoiraGechi();
@@ -98,6 +109,7 @@ void game(RenderWindow &app) {
     view.setSize(Vector2f(1200, 800));
     updateMovement();
     tao.setPos(x, y);
+
 /*
 
     If player jumps over the enemy then the enemy will die otherwise the player will die when the player and enemy intersects.
@@ -116,7 +128,6 @@ void game(RenderWindow &app) {
             }
         }
     }
-
     if(level == 1){
         shoytans[9].updateEnemy();
         world1.drawTo(app);
