@@ -46,6 +46,10 @@
 *.user
 bin/*
 Header/collision.hpp
+<<<<<<< HEAD
 *.svg
 *.cdr
 *.eps
+Taos-Adventure
+=======
+>>>>>>> parent of b874d41... resource add

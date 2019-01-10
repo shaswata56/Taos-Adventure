@@ -5,6 +5,13 @@ all:
 	g++ -c "Source/Taos-Adventure.cpp" -o Taos-Adventure.o
 	g++ -o Taos-Adventure Taos-Adventure.o $(LIBS)
 	rm Taos-Adventure.o
+
+debug:
+	@echo "** Building with debugging flag"
+	g++ -c -g "Source/Taos-Adventure.cpp" -o Taos-Adventure.o
+	g++ -o Taos-Adventure Taos-Adventure.o $(LIBS)
+	rm Taos-Adventure.o
+
 clean:
 	@echo "** Removing object files and executable..."
 	rm -f Taos-Adventure

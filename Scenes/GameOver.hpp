@@ -8,8 +8,7 @@ using namespace sf;
 using namespace std;
 
 void game_over(RenderWindow &app,Text &endGameText){
-    app.clear();
-    printf("Shotti moira gechi....");
+    //printf("Shotti moira gechi....");
 
     /// SHOTTI MORE GELEO GAMEOVER TEXT SHOW KORTECHE NA JOKHON ENEMY ER SATHE BARI KHAIYA MORE
     /// CHECK KORIS TO PROBLEM KOI
