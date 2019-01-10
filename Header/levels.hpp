@@ -5,7 +5,7 @@ float x = 200;
 float y = 200;
 int ground = 564;
 int water = 900;
-int level = 1;
+int level = 0;
 bool chk=false;
 
 void updateGround1(){

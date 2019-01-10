@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <bits/stdc++.h>
 #include "../Header/scenes.hpp"
+#include "../Header/physX.hpp"
 using namespace std;
 using namespace sf;
 
@@ -31,7 +32,8 @@ void anim1(RenderWindow& app) {
         }
     }
     text.setPosition(anim1TextX,anim1TextY);
-    if(anim1Clock.getElapsedTime().asMilliseconds()>5000 || Keyboard::isKeyPressed(Keyboard::Escape)){
+    if(anim1Clock.getElapsedTime().asMilliseconds()>6000 || Keyboard::isKeyPressed(Keyboard::Escape)){
+        level = 1;
         currentScene = gamePlay;
     }
     app.draw(full);

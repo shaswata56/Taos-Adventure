@@ -21,19 +21,22 @@ Enemy shoytans[10];
 void MoiraGechi(void){
     world1.StopSFX();
     world2.StopSFX();
-    level = 1;
+    level = 0;
     chk = false;
     x = 100;
     y = 400;
     bx = 600;
     velocityX = 0;
     currentScene = gameOver;
+    Enemy* shoytans = new Enemy[10];
 }
 
 void game(RenderWindow &app) {
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         gameStarted = false;
+        world1.StopSFX();
+        world2.StopSFX();
     }
     if(tao.getpos().y > 800)
     {
@@ -104,7 +107,7 @@ void game(RenderWindow &app) {
 */
     for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
         if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
-            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
+            if(shoytans[shoytanNumber].getRect().top - tao.getRect().top >= 30){
                 shoytans[shoytanNumber].dead();
                 velocityY = -20;
             }
