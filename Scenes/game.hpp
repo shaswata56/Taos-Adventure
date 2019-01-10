@@ -31,6 +31,10 @@ void MoiraGechi(void){
 }
 
 void game(RenderWindow &app) {
+    if(gameStarted) {
+        tao.LoadTao("Resource/Levels/co/TaoSmall.png");
+        gameStarted = false;
+    }
     for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
         if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
             if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
@@ -38,13 +42,9 @@ void game(RenderWindow &app) {
                 velocityY = -20;
             }
             else {
-                tao.setPos(0, 900);
+                MoiraGechi();
             }
         }
-    }
-    if(gameStarted) {
-        tao.LoadTao("Resource/Levels/co/TaoSmall.png");
-        gameStarted = false;
     }
     if(tao.getpos().y > 800)
     {
@@ -106,13 +106,6 @@ void game(RenderWindow &app) {
     view.setSize(Vector2f(1200, 800));
     updateMovement();
     tao.setPos(x, y);
-/*
-
-    If player jumps over the enemy then the enemy will die otherwise the player will die when the player and enemy intersects.
-    I took 30 as a differences of the top positions of them after tweaking some other values.
-    Now it's time to place the enemies at the right places.
-
-*/
 
     if(level == 1){
         shoytans[9].updateEnemy();
