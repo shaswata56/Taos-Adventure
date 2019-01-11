@@ -31,7 +31,15 @@ void updateGround1(){
 }
 
 void updateGround2(){
-    if(x > 38 && x <= 440 && y <= 652) ground = 652;
+    if(x > 0 && x <= 440 && y <= 652) {
+        if(x <= 60 && x > -900){
+            stuck = -1;
+        }
+        else{
+            stuck = 0;
+        }
+        ground = 652;
+    }
     else if(x >= 688 && x <= 1192 && y <= 510) ground = 510;
     else if(x >= 1388 && x <= 1690 && y <= 372) ground = 372;
     else if(x >= 1938 && x <= 2240 && y <= 272) ground = 272;

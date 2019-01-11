@@ -119,9 +119,28 @@ void game(RenderWindow &app) {
             y = 100;
             bx = 600;
             velocityX = 0;
+            shoytans[4].initEnemy(509, 835, 315);
+            shoytans[4].jinda();
+            shoytans[5].initEnemy(2145, 2733, 506);
+            shoytans[5].jinda();
+            shoytans[6].initEnemy(3370, 3850, 400);
+            shoytans[6].jinda();
         }
         if(x >= 610 && x <= 4770) bx=x;
         world3.drawTo(app);
+        for(int shoytanNumber=4; shoytanNumber < 7; shoytanNumber++){
+            shoytans[shoytanNumber].updateEnemy();
+            if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
+            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
+                shoytans[shoytanNumber].dead();
+                velocityY = -20;
+            }
+            else {
+                MoiraGechi();
+            }
+        }
+        shoytans[shoytanNumber].drawEnemy(app);
+        }
     }
     user_interact(tao);
     View view(Vector2f(bx, 400), Vector2f(1200, 800));
