@@ -12,6 +12,7 @@ private:
     Sprite sFG, sBG;
     SoundBuffer bgbuff;
     Sound   bgfx;
+    
 public:
     void LoadFG(string s){
         fg.loadFromFile(s);

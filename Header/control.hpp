@@ -6,10 +6,10 @@ int s =10;
 
 void user_interact(Tao &tao)
 {
-    if(Keyboard::isKeyPressed(Keyboard::Left) && y >= ground){
+    if(Keyboard::isKeyPressed(Keyboard::Left) && y >= ground && stuck != -1){
         tao.RolnRun(-s);
     }
-    else if(Keyboard::isKeyPressed(Keyboard::Right) && y >= ground){
+    else if(Keyboard::isKeyPressed(Keyboard::Right) && y >= ground && stuck != 1){
         tao.RolnRun(s);
     }
     if(Keyboard::isKeyPressed(Keyboard::Up) && pressUpCount == 0){

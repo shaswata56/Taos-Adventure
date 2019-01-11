@@ -14,6 +14,7 @@ private:
     float moveSpeed=3;
     bool alive = true;
     bool started = true;
+
 public:
     string morarSoundLoc = "Resource/Levels/co/die.ogg";
     string enemyLoc = "Resource/Levels/co/enemyGreen.png";
@@ -58,7 +59,6 @@ public:
         enemySprite.scale(10, 10);
     }
     void dead() {
-        
         enemySound.play();
         alive = false;
     }

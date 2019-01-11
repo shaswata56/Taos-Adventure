@@ -15,7 +15,6 @@ void updateMovement()
     if(y < ground){
         velocityY += gravity;
     }
-
     else if(y > ground){
         y = ground;
         pressUpCount = 0;

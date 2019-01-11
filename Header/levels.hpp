@@ -7,6 +7,7 @@ int ground = 564;
 int water = 900;
 int level = 0;
 bool chk=false;
+int stuck;
 
 void updateGround1(){
     if(x > 0 && x <= 500 && y <= 564+51) ground = 564+51;
@@ -14,6 +15,12 @@ void updateGround1(){
     else if(x >= 1505 && x <= 1900 && y <= 143+142+50) ground = 143+142+50;
     else if(x >= 1935 && x <= 2320 && y <= 143+336+50) ground = 143+336+50;
     else if(x > 2320 && x <= 3020 && y <= 143+433+50){
+        if(x <= 2380 && x > 2320){
+            stuck = -1;
+        }
+        else{
+            stuck = 0;
+        }
         ground = 143+433+50;
         if(x > 3000){
             level=2;
