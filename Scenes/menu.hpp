@@ -13,7 +13,8 @@ bool menuStarted=true;
 Texture backgroundTexture, normalTexture, soundOffTexture, musicOffTexture;
 Sprite backgroundSprite, backgroundSprite2, normalSprite, soundOffSprrite, musicOffSprite;
 
-Clock frameRateChecker;
+Clock menuButtonClock;
+bool musicOn=true, soundOn=true;
 
 void menu(RenderWindow &app){
 
@@ -38,16 +39,28 @@ void menu(RenderWindow &app){
         {
             currentScene = startingAnime;
         }
+        if(mousePosition.y >= 605 && mousePosition.y <= 710){
+            if(mousePosition.x >= 435 && mousePosition.y <= 540 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
+                    printf("\n########\n");
+                musicOn = !musicOn;
+                menuButtonClock.restart();
+            }
+            if(mousePosition.x >= 650 && mousePosition.y <= 745 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
+                soundOn = !soundOn;
+                menuButtonClock.restart();
+            }
+        }
     }
 
     backgroundSprite.move(-2, 0);
     backgroundSprite2.move(-2, 0);
     if(backgroundSprite.getPosition().x<-1200) backgroundSprite.setPosition(1200, 0);
     if(backgroundSprite2.getPosition().x<-1200) backgroundSprite2.setPosition(1200, 0);
-
     app.draw(backgroundSprite);
     app.draw(backgroundSprite2);
     app.draw(normalSprite);
+    if(!musicOn) app.draw(musicOffSprite);
+    if(!soundOn) app.draw(soundOffSprrite);
 }
 
 #endif // MENU_HPP_INCLUDED
