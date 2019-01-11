@@ -1,7 +1,7 @@
 #include "../Header/scenes.hpp"
 #include "../Scenes/game.hpp"
 #include "../Scenes/menu.hpp"
-#include "../Scenes/GameOver.hpp"
+#include "../Scenes/GameOver.hpp"``
 #include "../Scenes/story.hpp"
 #include "../Scenes/addedLater.hpp"
 #include "../Scenes/anim1.hpp"
@@ -9,7 +9,6 @@
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
     app.setFramerateLimit(45);
-
     app.setVerticalSyncEnabled(false);
     currentScene = mainMenu;
     Font AmaticB;
