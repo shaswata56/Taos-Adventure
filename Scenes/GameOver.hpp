@@ -8,11 +8,6 @@ using namespace sf;
 using namespace std;
 
 void game_over(RenderWindow &app,Text &endGameText){
-    //printf("Shotti moira gechi....");
-
-    /// SHOTTI MORE GELEO GAMEOVER TEXT SHOW KORTECHE NA JOKHON ENEMY ER SATHE BARI KHAIYA MORE
-    /// CHECK KORIS TO PROBLEM KOI
-
     app.draw(endGameText);
     if(Keyboard::isKeyPressed(Keyboard::Backspace)) {
     	currentScene = mainMenu;

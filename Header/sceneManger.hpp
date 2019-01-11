@@ -10,7 +10,7 @@ int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
     app.setFramerateLimit(45);
 
-    app.setVerticalSyncEnabled(false);
+    app.setVerticalSyncEnabled(true);
     currentScene = mainMenu;
     Font AmaticB;
     AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
@@ -28,7 +28,7 @@ int updateScene() {
             }
         }
         app.clear();
-        
+
         switch(currentScene){
             case startingAnime:
                 anim1(app);
