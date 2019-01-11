@@ -40,12 +40,11 @@ void menu(RenderWindow &app){
             currentScene = startingAnime;
         }
         if(mousePosition.y >= 605 && mousePosition.y <= 710){
-            if(mousePosition.x >= 435 && mousePosition.y <= 540 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
-                    printf("\n########\n");
+            if(mousePosition.x >= 435 && mousePosition.x <= 540 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
                 musicOn = !musicOn;
                 menuButtonClock.restart();
             }
-            if(mousePosition.x >= 650 && mousePosition.y <= 745 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
+            if(mousePosition.x >= 650 && mousePosition.x <= 745 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
                 soundOn = !soundOn;
                 menuButtonClock.restart();
             }
