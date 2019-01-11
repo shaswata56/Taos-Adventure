@@ -53,7 +53,15 @@ void updateGround3(){
     else if(x >= 490 && x <= 885 && y <= 315) ground = 315;
     else if(x >= 1119 && x <= 1520 && y <= 170) ground = 170;
     else if(x >= 1320 && x <= 1584 && y <= 470 && y > 170) ground = 470;
-    else if(x >= 1585 && x <= 1840 && y <= 590 && y > 480) ground = 590;
+    else if(x >= 1585 && x <= 1840 && y <= 590 && y > 480) {
+        if(x <= 1644 && x > 1584){
+            stuck = -1;
+        }
+        else{
+            stuck = 0;
+        }
+        ground = 590;
+    }
     else if(x > 2130 && x <= 2780 && y <= 500 && y > 320) ground = 500;
     else if(x > 2630 && x <= 3025 && y <= 320) ground = 320;
     else if(x > 3370 && x <= 3900 && y <= 400) ground = 400;
