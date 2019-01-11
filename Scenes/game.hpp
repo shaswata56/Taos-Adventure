@@ -34,20 +34,9 @@ void MoiraGechi(void){
 void game(RenderWindow &app) {
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
-        gameStarted = false;
         world1.StopSFX();
         world2.StopSFX();
-    }
-    for (int shoytanNumber = 0; shoytanNumber < 10; shoytanNumber++){
-        if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
-            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
-                shoytans[shoytanNumber].dead();
-                velocityY = -20;
-            }
-            else {
-                MoiraGechi();
-            }
-        }
+        gameStarted = false;
     }
     if(tao.getpos().y > 800)
     {
@@ -66,10 +55,20 @@ void game(RenderWindow &app) {
             velocityX = 0;
             world1.PlaySFX();
             shoytans[9].initEnemy(1505.0f, 1850.0f, 330.0f);
+            shoytans[9].jinda();
         }
         if(x >= 610 && x <= 2390) bx=x;
-        shoytans[9].updateEnemy();
         world1.drawTo(app);
+        shoytans[9].updateEnemy();
+        if(tao.getRect().intersects(shoytans[9].getRect())){
+            if(shoytans[9].getRect().top-tao.getRect().top>=30){
+                shoytans[9].dead();
+                velocityY = -20;
+            }
+            else {
+                MoiraGechi();
+            }
+        }
         shoytans[9].drawEnemy(app);
     }
     else if(level == 2){
@@ -86,20 +85,32 @@ void game(RenderWindow &app) {
             velocityX = 0;
             world2.PlaySFX();
             shoytans[0].initEnemy(688, 1142, 505);
+            shoytans[0].jinda();
             shoytans[1].initEnemy(1938, 2190, 268);
+            shoytans[1].jinda();
             shoytans[2].initEnemy(3088, 3390, 368);
+            shoytans[2].jinda();
             shoytans[3].initEnemy(4138, 4492, 505);
+            shoytans[3].jinda();
         }
         if(x >= 610 && x <= 4380) bx=x;
         world2.drawTo(app);
-        for(int shoytanNumber=0; shoytanNumber<4; shoytanNumber++){
+        for(int shoytanNumber=0; shoytanNumber < 4; shoytanNumber++){
             shoytans[shoytanNumber].updateEnemy();
-            shoytans[shoytanNumber].drawEnemy(app);
+            if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
+            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
+                shoytans[shoytanNumber].dead();
+                velocityY = -20;
+            }
+            else {
+                MoiraGechi();
+            }
+        }
+        shoytans[shoytanNumber].drawEnemy(app);
         }
     }
     else if(level == 3){
         if(chk == false){
-            world2.StopSFX();
             world3.LoadBG("Resource/Levels/3/bg.png");
             world3.LoadFG("Resource/Levels/3/fg.png");
             world3.PosFG(-50);

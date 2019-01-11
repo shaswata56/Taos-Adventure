@@ -23,6 +23,7 @@ public:
         FloatRect taoBound = sTao.getLocalBounds();
         sTao.setOrigin(taoBound.width/2,taoBound.height/2);
         kicksb.loadFromFile("Resource/Levels/co/kick.wav");
+        kickwav.setBuffer(kicksb);
     }
     void drawTo(RenderWindow& win){
         win.draw(sTao);
@@ -37,7 +38,6 @@ public:
         sTao.rotate(val);
     }
     void kick(){
-        kickwav.setBuffer(kicksb);
         kickwav.play();
     }
     Vector2f getpos(){

@@ -13,6 +13,7 @@ private:
     Sound enemySound;
     float moveSpeed=3;
     bool alive = true;
+    bool started = true;
 public:
     string morarSoundLoc = "Resource/Levels/co/die.ogg";
     string enemyLoc = "Resource/Levels/co/enemyGreen.png";
@@ -23,12 +24,12 @@ public:
         enemySprite.setTexture(enemmyTexture);
         enemySoundBuffer.loadFromFile(morarSoundLoc);
         enemySound.setBuffer(enemySoundBuffer);
-        enemySprite.scale(.1,.1);
         startPoint=startP;
         endPoint=endP;
         height=heightP;
         enemySprite.setPosition(startPoint, height);
     }
+    
     void updateEnemy(){
         if(alive){
             float enemyX = enemySprite.getPosition().x;
@@ -53,9 +54,20 @@ public:
     FloatRect getRect(){
         return enemySprite.getGlobalBounds();
     }
+    void boroshoro(){
+        enemySprite.scale(10, 10);
+    }
     void dead() {
+        
         enemySound.play();
         alive = false;
+    }
+    void jinda() {
+        if(this->started){
+            enemySprite.scale(.1,.1);
+            this->started=false;
+        }
+        alive = true;
     } 
 };
 

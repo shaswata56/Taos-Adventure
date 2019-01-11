@@ -28,7 +28,7 @@ int updateScene() {
             }
         }
         app.clear();
-
+        
         switch(currentScene){
             case startingAnime:
                 anim1(app);
@@ -46,10 +46,7 @@ int updateScene() {
                 addLater(app);
                 break;
             case gameOver:
-                if(game_over(app, endGameText) == 1){
-                    app.close();
-                    return 1;
-                }
+                game_over(app, endGameText);
                 break;
             default :
                 break;
