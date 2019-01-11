@@ -1,7 +1,7 @@
 #include "../Header/scenes.hpp"
 #include "../Scenes/game.hpp"
 #include "../Scenes/menu.hpp"
-#include "../Scenes/GameOver.hpp"``
+#include "../Scenes/GameOver.hpp"
 #include "../Scenes/story.hpp"
 #include "../Scenes/addedLater.hpp"
 #include "../Scenes/anim1.hpp"
