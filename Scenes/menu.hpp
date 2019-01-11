@@ -32,6 +32,14 @@ void menu(RenderWindow &app){
         menuStarted = false;
     }
 
+    if(Mouse::isButtonPressed(Mouse::Left)){
+        Vector2i mousePosition = Mouse::getPosition(app);
+        if(mousePosition.x >= 545 && mousePosition.x <= 690 && mousePosition.y >= 400 && mousePosition.y <= 550)
+        {
+            currentScene = startingAnime;
+        }
+    }
+
     backgroundSprite.move(-2, 0);
     backgroundSprite2.move(-2, 0);
     if(backgroundSprite.getPosition().x<-1200) backgroundSprite.setPosition(1200, 0);
