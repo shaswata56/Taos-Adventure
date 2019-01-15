@@ -12,6 +12,8 @@ bool menuStarted=true;
 
 Texture backgroundTexture, normalTexture, soundOffTexture, musicOffTexture;
 Sprite backgroundSprite, backgroundSprite2, normalSprite, soundOffSprrite, musicOffSprite;
+SoundBuffer mainbuff;
+Sound mainbg;
 
 Clock menuButtonClock;
 bool musicOn=true, soundOn=true;
@@ -23,6 +25,7 @@ void menu(RenderWindow &app){
         normalTexture.loadFromFile("Resource/Menu/normal.png");
         soundOffTexture.loadFromFile("Resource/Menu/soundOff.png");
         musicOffTexture.loadFromFile("Resource/Menu/musicOff.png");
+        //mainbuff.loadFromFile();
         backgroundSprite.setTexture(backgroundTexture);
         backgroundSprite2.setTexture(backgroundTexture);
         normalSprite.setTexture(normalTexture);
@@ -32,7 +35,13 @@ void menu(RenderWindow &app){
         backgroundSprite2.setPosition(1200, 0);
         menuStarted = false;
     }
-
+    /*  Mouse pointer location viewer
+    string str;
+    str.append(to_string(Mouse::getPosition(app).x));
+    str.append(",");
+    str.append(to_string(Mouse::getPosition(app).y));
+    app.setTitle(str);
+    */
     if(Mouse::isButtonPressed(Mouse::Left)){
         Vector2i mousePosition = Mouse::getPosition(app);
         if(mousePosition.x >= 545 && mousePosition.x <= 690 && mousePosition.y >= 400 && mousePosition.y <= 550)
@@ -49,6 +58,12 @@ void menu(RenderWindow &app){
                 menuButtonClock.restart();
             }
         }
+        if(mousePosition.x >= 1076 && mousePosition.x <= 1169 && mousePosition.y >= 30 && mousePosition.y <= 121)
+            app.close();
+    }
+
+    if(Keyboard::isKeyPressed(Keyboard::Enter)){
+        currentScene = startingAnime;
     }
 
     backgroundSprite.move(-2, 0);
