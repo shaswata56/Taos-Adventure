@@ -25,7 +25,9 @@ void menu(RenderWindow &app){
         normalTexture.loadFromFile("Resource/Menu/normal.png");
         soundOffTexture.loadFromFile("Resource/Menu/soundOff.png");
         musicOffTexture.loadFromFile("Resource/Menu/musicOff.png");
-        //mainbuff.loadFromFile();
+        mainbuff.loadFromFile("Resource/Menu/joy_bangla.ogg");
+        mainbg.setBuffer(mainbuff);
+        mainbg.setLoop(true);
         backgroundSprite.setTexture(backgroundTexture);
         backgroundSprite2.setTexture(backgroundTexture);
         normalSprite.setTexture(normalTexture);
@@ -34,6 +36,7 @@ void menu(RenderWindow &app){
         backgroundSprite.setPosition(0,0);
         backgroundSprite2.setPosition(1200, 0);
         menuStarted = false;
+        mainbg.play();
     }
     /*  Mouse pointer location viewer
     string str;
@@ -42,6 +45,7 @@ void menu(RenderWindow &app){
     str.append(to_string(Mouse::getPosition(app).y));
     app.setTitle(str);
     */
+    
     if(Mouse::isButtonPressed(Mouse::Left)){
         Vector2i mousePosition = Mouse::getPosition(app);
         if(mousePosition.x >= 545 && mousePosition.x <= 690 && mousePosition.y >= 400 && mousePosition.y <= 550)
@@ -50,7 +54,14 @@ void menu(RenderWindow &app){
         }
         if(mousePosition.y >= 605 && mousePosition.y <= 710){
             if(mousePosition.x >= 435 && mousePosition.x <= 540 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
-                musicOn = !musicOn;
+                if(musicOn){
+                    musicOn = !musicOn;
+                    mainbg.pause();
+                }
+                else{
+                    musicOn = !musicOn;
+                    mainbg.play();
+                }
                 menuButtonClock.restart();
             }
             if(mousePosition.x >= 650 && mousePosition.x <= 745 && menuButtonClock.getElapsedTime().asMilliseconds()>500){
