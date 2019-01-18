@@ -74,7 +74,15 @@ void updateGround3(){
     else if(x > 2630-30 && x <= 3025 && y <= 320) ground = 320;
     else if(x > 3370-30 && x <= 3900 && y <= 400) ground = 400;
     else if(x > 3885-30 && x <= 5410 && y <= 590 && y > 480) ground = 590;
+    else if(x > 5410) {
+        level = 4;
+        chk = false;
+    }
     else ground = water;
+}
+
+void updateGround4(){
+    ground = 510;
 }
 
 #endif // LEVELS_HPP_INCLUDED

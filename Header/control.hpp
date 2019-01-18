@@ -20,6 +20,7 @@ void user_interact(Tao &tao)
     if(velocityX != 0){
             tao.roll(velocityX);
     }
+    /*
     if(Keyboard::isKeyPressed(Keyboard::Escape)){
         Clock clk;
         while(!(clk.getElapsedTime().asSeconds() >= 100000)){
@@ -27,6 +28,7 @@ void user_interact(Tao &tao)
                     break;
         }
     }
+    */
 }
 
 #endif // CONTROL_H_INCLUDED

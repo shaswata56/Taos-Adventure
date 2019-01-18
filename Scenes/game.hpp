@@ -12,7 +12,7 @@
 #include "../Header/enemy.hpp"
 
 Tao tao;
-World world1, world2, world3;
+World world1, world2, world3, world4;
 bool gameStarted = true;
 int bx = 600;
 View view;
@@ -57,6 +57,7 @@ void game(RenderWindow &app) {
             shoytans[9].initEnemy(1505.0f, 1850.0f, 330.0f);
             shoytans[9].jinda();
         }
+        world1.PosBG(bx / 9.23 + bx - 1401);
         if(x >= 610 && x <= 2390) bx=x;
         world1.drawTo(app);
         shoytans[9].updateEnemy();
@@ -93,6 +94,7 @@ void game(RenderWindow &app) {
             shoytans[3].initEnemy(4138, 4492, 505);
             shoytans[3].jinda();
         }
+        world2.PosBG(bx / 9.23 + bx - 1401);
         if(x >= 610 && x <= 4380) bx=x;
         world2.drawTo(app);
         for(int shoytanNumber=0; shoytanNumber < 4; shoytanNumber++){
@@ -111,6 +113,7 @@ void game(RenderWindow &app) {
     }
     else if(level == 3){
         if(chk == false){
+            world2.StopSFX();
             world3.LoadBG("Resource/Levels/3/bg.png");
             world3.LoadFG("Resource/Levels/3/fg.png");
             world3.PosFG(-50);
@@ -125,7 +128,9 @@ void game(RenderWindow &app) {
             shoytans[5].jinda();
             shoytans[6].initEnemy(3370, 3850, 400);
             shoytans[6].jinda();
+            world2.PlaySFX();
         }
+        world3.PosBG(bx / 9.23 + bx - 1401);
         if(x >= 610 && x <= 4770) bx=x;
         world3.drawTo(app);
         for(int shoytanNumber=4; shoytanNumber < 7; shoytanNumber++){
@@ -142,13 +147,30 @@ void game(RenderWindow &app) {
         shoytans[shoytanNumber].drawEnemy(app);
         }
     }
-    user_interact(tao);
+    else if(level == 4){
+        if(chk == false){
+            world4.LoadBG("Resource/Levels/4/bg.png");
+            world4.LoadFG("Resource/Levels/4/fg.png");
+            world4.PosFG(0);
+            //world1.LoadSFX("Resource/Levels/1/day-sfx.ogg");
+            chk = true;
+            x = 100;
+            y = 400;
+            bx = 600;
+            velocityX = 0;
+            //world4.PlaySFX();
+        }
+        world4.PosBG(bx / 9.23 + bx - 1401);
+        if(x >= 610 && x <= 7390) bx=x;
+        world4.drawTo(app);
+    }
+
     View view(Vector2f(bx, 400), Vector2f(1200, 800));
     view.setCenter(Vector2f(bx, 400));
     view.setSize(Vector2f(1200, 800));
     updateMovement();
+    user_interact(tao);
     tao.setPos(x, y);
-
     if(!(level == 3 && x > 5000)) tao.drawTo(app);
     app.setView(view);
 }

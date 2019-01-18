@@ -22,6 +22,9 @@ public:
     void PosFG(int w){
         sFG.setPosition(0, w);
     }
+    void PosBG(int v){
+        sBG.setPosition(v, 0);
+    }
     void LoadBG(string s){
         bg.loadFromFile(s);
         bg.setSmooth(true);

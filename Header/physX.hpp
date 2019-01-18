@@ -36,6 +36,9 @@ void updateMovement()
         case 3:
             updateGround3();
             break;
+        case 4:
+            updateGround4();
+            break;
         default:
             break;
     }

@@ -38,13 +38,13 @@ void menu(RenderWindow &app){
         menuStarted = false;
         mainbg.play();
     }
-    /*  Mouse pointer location viewer
+    //  Mouse pointer location viewer
     string str;
     str.append(to_string(Mouse::getPosition(app).x));
     str.append(",");
     str.append(to_string(Mouse::getPosition(app).y));
     app.setTitle(str);
-    */
+    
     
     if(Mouse::isButtonPressed(Mouse::Left)){
         Vector2i mousePosition = Mouse::getPosition(app);
