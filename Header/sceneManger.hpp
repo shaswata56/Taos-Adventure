@@ -5,6 +5,7 @@
 #include "../Scenes/story.hpp"
 #include "../Scenes/addedLater.hpp"
 #include "../Scenes/anim1.hpp"
+#include "../Scenes/anim2.hpp"
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
@@ -31,6 +32,9 @@ int updateScene() {
         switch(currentScene){
             case startingAnime:
                 anim1(app);
+                break;
+            case secondLevelAnime:
+                anim2(app);
                 break;
             case gamePlay:
                 game(app);

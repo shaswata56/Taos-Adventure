@@ -7,6 +7,7 @@ enum Scene{
     mainMenu,
     gamePlay,
     startingAnime,
+    secondLevelAnime,
     gameOver,
     addedLater,
     storyLine

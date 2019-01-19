@@ -1,6 +1,8 @@
 #ifndef LEVELS_HPP_INCLUDED
 #define LEVELS_HPP_INCLUDED
 
+#include "../Header/scenes.hpp"
+
 float x = 200;
 float y = 200;
 int ground = 564;
@@ -23,7 +25,7 @@ void updateGround1(){
         }
         ground = 143+433+50;
         if(x > 3000){
-            level=2;
+            currentScene = secondLevelAnime;
             chk = false;
         }
     }

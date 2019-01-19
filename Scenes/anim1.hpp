@@ -33,7 +33,7 @@ void anim1(RenderWindow& app) {
     }
     text.setPosition(anim1TextX,anim1TextY);
     if(anim1Clock.getElapsedTime().asMilliseconds() > 5000 || Keyboard::isKeyPressed(Keyboard::Escape)){
-        level = 4;
+        level = 1;
         currentScene = gamePlay;
     }
     app.draw(full);
