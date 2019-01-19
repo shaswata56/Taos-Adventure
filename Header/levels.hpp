@@ -82,7 +82,9 @@ void updateGround3(){
 }
 
 void updateGround4(){
-    ground = 510;
+    if(x > 0 && x <= 750 && y <= 634 - 40) ground = 634 - 40;
+    else if(x > 930 && x <= 1537 && y <= 427 - 40) ground = 427 - 40;
+    else ground = water;
 }
 
 #endif // LEVELS_HPP_INCLUDED
