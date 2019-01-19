@@ -84,6 +84,27 @@ void updateGround3(){
 void updateGround4(){
     if(x > 0 && x <= 750 && y <= 634 - 40) ground = 634 - 40;
     else if(x > 930 && x <= 1537 && y <= 427 - 40) ground = 427 - 40;
+    else if(x > 1786 && x <= 2385 && y <= 565 - 40 && y > 420) ground = 565 - 40;
+    else if(x > 2160 && x <= 2757 && y <= 370 - 40) ground = 370 - 40;
+    else if(x > 2910 && x <= 3776 && y <= 465 - 40) ground = 465 - 40;
+    else if(x > 4080 && x <= 4567 && y <= 570 - 40) ground = 570 - 40;
+    else if(x > 4719 && x <= 5430 && y <= 424 - 40) ground = 424 - 40;
+    else if(x > 5520 && x <= 5920 && y <= 263 - 40) ground = 263 - 40;
+    else if(x > 5932 && x <= 6686 && y <= 629 - 40) {
+        if(x <= 6686 && x > 6626 && y > 390){
+            stuck = 1;
+        }
+        else{
+            stuck = 0;
+        }
+        ground = 629 - 40;
+    }
+    else if(x > 6655 && x <= 6710 && y > 384) {
+        x = 6632;
+        y = 629 - 38;
+    }
+    else if(x > 6640 && x <= 7242 && y <= 370 - 30) ground = 370 - 30;
+    else if(x > 7499 && x <= 8060 && y <= 628 - 40 ) ground = 628 - 40;
     else ground = water;
 }
 

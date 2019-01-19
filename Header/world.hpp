@@ -38,6 +38,9 @@ public:
     void PlaySFX(){
         bgfx.play();
     }
+    void setVol(int vol){
+        bgfx.setVolume(vol);
+    }
     void StopSFX(){
         bgfx.stop();
     }
