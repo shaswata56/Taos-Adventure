@@ -14,6 +14,8 @@ Texture text1, text2, text3, text4;
 bool anim2started=true;
 Clock anim2Clock;
 
+float anim2TextX=0, anim2TextY=0;
+
 void anim2(RenderWindow& app) {
     app.clear();
     if(anim2started){
