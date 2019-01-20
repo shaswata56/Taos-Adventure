@@ -44,8 +44,8 @@ void menu(RenderWindow &app){
     str.append(",");
     str.append(to_string(Mouse::getPosition(app).y));
     app.setTitle(str);
-    
-    
+
+
     if(Mouse::isButtonPressed(Mouse::Left)){
         Vector2i mousePosition = Mouse::getPosition(app);
         if(mousePosition.x >= 545 && mousePosition.x <= 690 && mousePosition.y >= 400 && mousePosition.y <= 550)

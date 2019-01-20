@@ -8,34 +8,35 @@
 using namespace std;
 using namespace sf;
 
-Texture text1, text2, text3, text4;
+Sprite fullA2, textA2;
+Texture text1, text2, text3, text4, fullT2;
 bool anim2started=true;
 Clock anim2Clock;
-float anim2TextX=600, anim2TextY=600;
 
 void anim2(RenderWindow& app) {
+    app.clear();
     if(anim2started){
-        fullT.loadFromFile("Resource/cutScenes/anim2/bg.png");
+        fullT2.loadFromFile("Resource/cutScenes/anim2/bg.png");
         text1.loadFromFile("Resource/cutScenes/anim2/1.png");
         text2.loadFromFile("Resource/cutScenes/anim2/2.png");
         text3.loadFromFile("Resource/cutScenes/anim2/3.png");
         text4.loadFromFile("Resource/cutScenes/anim2/4.png");
-        full.setTexture(fullT);
-        text.setTexture(text1);
+        fullA2.setTexture(fullT);
+        textA2.setTexture(text1);
         anim2Clock.restart();
-        full.setPosition(0,0);
-        text.setPosition(anim2TextX,anim2TextY);
+        fullA2.setPosition(0,0);
+        textA2.setPosition(0,0);
         anim2started=false;
     }
-    if(anim2Clock.getElapsedTime().asMilliseconds()>2000) text.setTexture(text2);
-    if(anim2Clock.getElapsedTime().asMilliseconds()>4000) text.setTexture(text3);
-    if(anim2Clock.getElapsedTime().asMilliseconds()>6000) text.setTexture(text4);
+    if(anim2Clock.getElapsedTime().asMilliseconds()>2000) textA2.setTexture(text2);
+    if(anim2Clock.getElapsedTime().asMilliseconds()>4000) textA2.setTexture(text3);
+    if(anim2Clock.getElapsedTime().asMilliseconds()>6000) textA2.setTexture(text4);
     if(anim2Clock.getElapsedTime().asMilliseconds() > 8000 || Keyboard::isKeyPressed(Keyboard::Escape)){
         level = 2;
         currentScene = gamePlay;
     }
-    app.draw(full);
-    app.draw(text);
+    app.draw(fullA2);
+    app.draw(textA2);
 }
 
 #endif // ANIM2_HPP_INCLUDED
