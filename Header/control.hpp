@@ -2,7 +2,7 @@
 #define CONTROL_H_INCLUDED
 #include "../Header/tao.hpp"
 
-int s =10;
+int s = 10;
 
 void user_interact(Tao &tao)
 {

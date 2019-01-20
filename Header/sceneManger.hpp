@@ -9,7 +9,7 @@
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
-    app.setFramerateLimit(45);
+    app.setFramerateLimit(60);
     app.setVerticalSyncEnabled(false);
     currentScene = mainMenu;
     Font AmaticB;
