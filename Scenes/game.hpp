@@ -21,6 +21,7 @@ Enemy shoytans[10];
 void MoiraGechi(void){
     world1.StopSFX();
     world2.StopSFX();
+    world4.StopSFX();
     level = 0;
     chk = false;
     x = 100;
@@ -36,6 +37,7 @@ void game(RenderWindow &app) {
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         world1.StopSFX();
         world2.StopSFX();
+        world4.StopSFX();
         gameStarted = false;
     }
     if(tao.getpos().y > 800)
@@ -117,6 +119,7 @@ void game(RenderWindow &app) {
             world3.LoadBG("Resource/Levels/3/bg.png");
             world3.LoadFG("Resource/Levels/3/fg.png");
             world3.PosFG(-50);
+            world2.LoadSFX("Resource/Levels/2/night-sfx.ogg");
             chk = true;
             x = 100;
             y = 100;
@@ -136,7 +139,7 @@ void game(RenderWindow &app) {
         for(int shoytanNumber=4; shoytanNumber < 7; shoytanNumber++){
             shoytans[shoytanNumber].updateEnemy();
             if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
-            if(shoytans[shoytanNumber].getRect().top-tao.getRect().top>=30){
+            if(shoytans[shoytanNumber].getRect().top - tao.getRect().top >= 30){
                 shoytans[shoytanNumber].dead();
                 velocityY = -20;
             }
@@ -149,16 +152,20 @@ void game(RenderWindow &app) {
     }
     else if(level == 4){
         if(chk == false){
+            world2.StopSFX();
             world4.LoadBG("Resource/Levels/4/bg.png");
             world4.LoadFG("Resource/Levels/4/fg.png");
             world4.PosFG(0);
-            //world1.LoadSFX("Resource/Levels/1/day-sfx.ogg");
+            world2.LoadSFX("Resource/Levels/2/night-sfx.ogg");
+            world4.LoadSFX("Resource/Levels/4/ghost.ogg");
+            world4.setVol(25);
             chk = true;
             x = 100;
             y = 400;
             bx = 600;
             velocityX = 0;
-            //world4.PlaySFX();
+            world2.PlaySFX();
+            world4.PlaySFX();
         }
         world4.PosBG(bx / 9.23 + bx - 1401);
         if(x >= 610 && x <= 7390) bx=x;
