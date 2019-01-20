@@ -1,6 +1,7 @@
 #ifndef CONTROL_H_INCLUDED
 #define CONTROL_H_INCLUDED
 #include "../Header/tao.hpp"
+#include "../Header/scenes.hpp"
 
 int s = 10;
 
@@ -17,6 +18,7 @@ void user_interact(Tao &tao)
             tao.kick();
             if(pressUpCount==1) velocityY = -30;
     }
+    if(Keyboard::isKeyPressed(Keyboard::Escape)) currentScene = gamePaused;
     if(velocityX != 0){
             tao.roll(velocityX);
     }

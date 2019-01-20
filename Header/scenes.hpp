@@ -10,7 +10,8 @@ enum Scene{
     secondLevelAnime,
     gameOver,
     addedLater,
-    storyLine
+    storyLine,
+    gamePaused
 } currentScene;
 
 #endif // SCENES_HPP_INCLUDED

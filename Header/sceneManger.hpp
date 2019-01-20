@@ -6,6 +6,7 @@
 #include "../Scenes/addedLater.hpp"
 #include "../Scenes/anim1.hpp"
 #include "../Scenes/anim2.hpp"
+#include "../Scenes/pause.hpp"
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
@@ -38,6 +39,9 @@ int updateScene() {
                 break;
             case gamePlay:
                 game(app);
+                break;
+            case gamePaused:
+                pause(app);
                 break;
             case mainMenu:
                 menu(app);
