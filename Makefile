@@ -6,7 +6,7 @@ all:
 	g++ -o Taos-Adventure Taos-Adventure.o $(LIBS)
 	rm Taos-Adventure.o
 
-debug:
+gdb:
 	@echo "** Building with debugging flag"
 	g++ -c -g "Source/Taos-Adventure.cpp" -o Taos-Adventure.o
 	g++ -o Taos-Adventure Taos-Adventure.o $(LIBS)
