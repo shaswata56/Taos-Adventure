@@ -33,6 +33,7 @@ void MoiraGechi(void){
 }
 
 void game(RenderWindow &app) {
+    app.clear();
     if(gameStarted) {
         tao.LoadTao("Resource/Levels/co/TaoSmall.png");
         world1.StopSFX();

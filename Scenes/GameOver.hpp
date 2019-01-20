@@ -8,6 +8,7 @@ using namespace sf;
 using namespace std;
 
 void game_over(RenderWindow &app,Text &endGameText){
+    app.clear();
     app.draw(endGameText);
     if(Keyboard::isKeyPressed(Keyboard::Backspace)) {
     	currentScene = mainMenu;

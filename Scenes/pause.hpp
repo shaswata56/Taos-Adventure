@@ -14,7 +14,7 @@ bool paused = true;
 
 void pause(RenderWindow &app){
     if(paused){
-        pauseScreenTexture.loadFromFile("../Resource/pause.png");
+        pauseScreenTexture.loadFromFile("Resource/pause.png");
         pauseScreen.setTexture(pauseScreenTexture);
     }
     app.draw(pauseScreen);

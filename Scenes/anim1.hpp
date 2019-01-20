@@ -15,6 +15,7 @@ Clock anim1Clock;
 float anim1TextX=600, anim1TextY=600;
 
 void anim1(RenderWindow& app) {
+    app.clear();
     if(anim1started){
         fullT.loadFromFile("Resource/cutScenes/anim1/1.png");
         textT.loadFromFile("Resource/cutScenes/anim1/2.png");

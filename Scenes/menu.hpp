@@ -19,7 +19,7 @@ Clock menuButtonClock;
 bool musicOn=true, soundOn=true;
 
 void menu(RenderWindow &app){
-
+    app.clear();
     if(menuStarted){
         backgroundTexture.loadFromFile("Resource/Menu/BG.png");
         normalTexture.loadFromFile("Resource/Menu/normal.png");

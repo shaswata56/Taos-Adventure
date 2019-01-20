@@ -28,7 +28,7 @@ int updateScene() {
                 app.close();
             }
         }
-        app.clear();
+        //app.clear();
 
         switch(currentScene){
             case startingAnime:
