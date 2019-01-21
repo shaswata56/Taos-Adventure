@@ -24,7 +24,7 @@ void updateGround1(){
             stuck = 0;
         }
         ground = 143+433+50;
-        if(x > 2450){
+        if(x > 2460){
             currentScene = secondLevelAnime;
             chk = false;
         }

@@ -17,6 +17,8 @@ bool gameStarted = true;
 int bx = 600;
 View view;
 Enemy shoytans[10];
+Texture otherCharacterTexture;
+Sprite otherCharacter;
 
 void MoiraGechi(void){
     world1.StopSFX();
@@ -47,6 +49,10 @@ void game(RenderWindow &app) {
     }
     if(level == 1){
         if(chk == false){
+            otherCharacterTexture.loadFromFile("Resource/Levels/co/Tao3Small.png");
+            otherCharacter.setTexture(otherCharacterTexture);
+            //otherCharacter.scale(0.117, 0.117);
+            otherCharacter.setPosition(2850, 626);
             world1.LoadBG("Resource/Levels/1/bg.png");
             world1.LoadFG("Resource/Levels/1/fg.png");
             world1.PosFG(195+45);
@@ -74,6 +80,7 @@ void game(RenderWindow &app) {
             }
         }
         shoytans[9].drawEnemy(app);
+        app.draw(otherCharacter);
     }
     else if(level == 2){
         if(chk == false){
