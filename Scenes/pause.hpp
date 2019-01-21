@@ -12,11 +12,16 @@ Texture pauseScreenTexture;
 Sprite pauseScreen;
 bool paused = true;
 
+
 void pause(RenderWindow &app){
+    app.clear(Color::White);
     if(paused){
         pauseScreenTexture.loadFromFile("Resource/pause.png");
         pauseScreen.setTexture(pauseScreenTexture);
     }
+    ZeroView.setCenter(600, 400);
+    ZeroView.setSize(Vector2f(1200, 800));
+    app.setView(ZeroView);
     app.draw(pauseScreen);
 
     if(Keyboard::isKeyPressed(Keyboard::Enter)) currentScene = gamePlay;

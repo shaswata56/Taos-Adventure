@@ -14,4 +14,5 @@ enum Scene{
     gamePaused
 } currentScene;
 
+
 #endif // SCENES_HPP_INCLUDED

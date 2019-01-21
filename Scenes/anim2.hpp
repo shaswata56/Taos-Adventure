@@ -8,6 +8,8 @@
 using namespace std;
 using namespace sf;
 
+View ZeroView;
+
 Sprite Sfull, Stext, sp;
 Texture Tfull, Ttext, t;
 Texture text1, text2, text3, text4;
@@ -31,8 +33,8 @@ void anim2(RenderWindow& app) {
         Sfull.setTexture(Tfull);
         Stext.setTexture(text1);
         anim2Clock.restart();
-        Sfull.setPosition(1786,0);
-        Stext.setPosition(1200 + anim2TextX,anim2TextY - 600);
+        Sfull.setPosition(0,0);
+        Stext.setPosition(0,0);
         anim2started=false;
     }
 
@@ -44,6 +46,10 @@ void anim2(RenderWindow& app) {
         anim2started=true;
         currentScene = gamePlay;
     }
+
+    ZeroView.setCenter(600, 400);
+    ZeroView.setSize(Vector2f(1200, 800));
+    app.setView(ZeroView);
 
     app.clear(Color::White);
     app.draw(Sfull);
