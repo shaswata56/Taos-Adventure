@@ -1,6 +1,6 @@
    #                                                      Tao's  Adventure  [![CodeFactor](https://www.codefactor.io/repository/github/shaswata56/taos-adventure/badge)](https://www.codefactor.io/repository/github/shaswata56/taos-adventure)
    
-   Project: 2 | SWE-1/2 | Group: 17
+   Project: 2 | SUST SWE-1/2 | Group: 17
    
    [Shakirul Hasan Khan](https://github.com/KhanShaheb34) – 2017831034
    

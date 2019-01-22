@@ -2,7 +2,6 @@
 
 int main()
 {
-    if(updateScene() == 1)
-    	main();
+    updateScene();
     return 0;
 }
