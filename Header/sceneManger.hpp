@@ -7,6 +7,7 @@
 #include "../Scenes/anim1.hpp"
 #include "../Scenes/anim2.hpp"
 #include "../Scenes/pause.hpp"
+#include "../Scenes/help.hpp"
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
@@ -49,8 +50,8 @@ int updateScene() {
             case storyLine:
                 story(app);
                 break;
-            case addedLater:
-                addLater(app);
+            case helpPage:
+                help(app);
                 break;
             case gameOver:
                 game_over(app, endGameText);
