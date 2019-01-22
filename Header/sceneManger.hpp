@@ -8,6 +8,7 @@
 #include "../Scenes/anim2.hpp"
 #include "../Scenes/pause.hpp"
 #include "../Scenes/help.hpp"
+#include "../Scenes/credits.hpp"
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
@@ -52,6 +53,9 @@ int updateScene() {
                 break;
             case helpPage:
                 help(app);
+                break;
+            case creditPage:
+                credit(app);
                 break;
             case gameOver:
                 game_over(app, endGameText);

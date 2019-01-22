@@ -71,6 +71,9 @@ void menu(RenderWindow &app){
             if(mousePosition.x >= 240 && mousePosition.x <= 340) {
                 currentScene = helpPage;
             }
+            if(mousePosition.x >= 855 && mousePosition.x <= 960) {
+                currentScene = creditPage;
+            }
         }
         if(mousePosition.x >= 1076 && mousePosition.x <= 1169 && mousePosition.y >= 30 && mousePosition.y <= 121)
             app.close();

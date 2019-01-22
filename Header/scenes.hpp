@@ -12,7 +12,8 @@ enum Scene{
     addedLater,
     storyLine,
     gamePaused,
-    helpPage
+    helpPage,
+    creditPage
 } currentScene;
 
 
