@@ -16,7 +16,7 @@ World world1, world2, world3, world4;
 bool gameStarted = true;
 int bx = 600;
 View view;
-Enemy shoytans[10];
+Enemy shoytans[15];
 Texture otherCharacterTexture;
 Sprite otherCharacter;
 
@@ -31,7 +31,7 @@ void MoiraGechi(void){
     bx = 600;
     velocityX = 0;
     currentScene = gameOver;
-    Enemy* shoytans = new Enemy[10];
+    Enemy* shoytans = new Enemy[15];
 }
 
 void game(RenderWindow &app) {
@@ -174,10 +174,33 @@ void game(RenderWindow &app) {
             velocityX = 0;
             world2.PlaySFX();
             world4.PlaySFX();
+            shoytans[10].initEnemy(945, 1440, 377);
+            shoytans[10].jinda();
+            shoytans[11].initEnemy(2170, 2680, 325);
+            shoytans[11].jinda();
+            shoytans[12].initEnemy(2910, 3700, 431);
+            shoytans[12].jinda();
+            shoytans[13].initEnemy(5540, 5840, 222);
+            shoytans[13].jinda();
+            shoytans[14].initEnemy(6655, 7180, 330);
+            shoytans[14].jinda();
         }
         world4.PosBG(bx / 9.23 + bx - 1401);
         if(x >= 610 && x <= 7390) bx=x;
         world4.drawTo(app);
+        for(int shoytanNumber=10; shoytanNumber < 15; shoytanNumber++){
+            shoytans[shoytanNumber].updateEnemy();
+            if(tao.getRect().intersects(shoytans[shoytanNumber].getRect())){
+            if(shoytans[shoytanNumber].getRect().top - tao.getRect().top >= 30){
+                shoytans[shoytanNumber].dead();
+                velocityY = -20;
+            }
+            else {
+                MoiraGechi();
+            }
+        }
+        shoytans[shoytanNumber].drawEnemy(app);
+        }
     }
 
     View view(Vector2f(bx, 400), Vector2f(1200, 800));

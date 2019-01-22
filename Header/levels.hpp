@@ -85,7 +85,7 @@ void updateGround3(){
 
 void updateGround4(){
     if(x > 0 && x <= 750 && y <= 634 - 40) ground = 634 - 40;
-    else if(x > 930 && x <= 1537 && y <= 427 - 40) ground = 427 - 40;
+    else if(x > 930 && x <= 1507 && y <= 427 - 40) ground = 427 - 40;
     else if(x > 1786 && x <= 2385 && y <= 565 - 40 && y > 420) ground = 565 - 40;
     else if(x > 2160 && x <= 2757 && y <= 370 - 40) ground = 370 - 40;
     else if(x > 2910 && x <= 3776 && y <= 465 - 40) ground = 465 - 40;
