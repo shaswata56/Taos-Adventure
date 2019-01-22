@@ -36,7 +36,7 @@ void menu(RenderWindow &app){
         backgroundSprite.setPosition(0,0);
         backgroundSprite2.setPosition(1200, 0);
         menuStarted = false;
-        //mainbg.play();
+        mainbg.play();
     }
     //  Mouse pointer location viewer
     string str;
