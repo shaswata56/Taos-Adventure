@@ -25,6 +25,12 @@ void pause(RenderWindow &app){
     app.draw(pauseScreen);
 
     if(Keyboard::isKeyPressed(Keyboard::Enter)) currentScene = gamePlay;
+
+    if(Mouse::isButtonPressed(Mouse::Left)){
+        if(Mouse::getPosition().x>475 && Mouse::getPosition().x<720 && Mouse::getPosition().y>345 && Mouse::getPosition().y<450) currentScene = gamePlay;
+        if(Mouse::getPosition().x>488 && Mouse::getPosition().x<705 && Mouse::getPosition().y>533 && Mouse::getPosition().y<625) currentScene = mainMenu;
+
+    }
 }
 
 #endif // PAUSE_HPP_INCLUDED
