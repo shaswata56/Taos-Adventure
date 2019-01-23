@@ -38,14 +38,10 @@ void menu(RenderWindow &app){
         menuStarted = false;
         mainbg.play();
     }
-    //  Mouse pointer location viewer
     string str;
-    str.append(to_string(Mouse::getPosition(app).x));
-    str.append(",");
-    str.append(to_string(Mouse::getPosition(app).y));
+    str.append("Taos-Adventure");
     app.setTitle(str);
-
-
+    
     if(Mouse::isButtonPressed(Mouse::Left)){
         Vector2i mousePosition = Mouse::getPosition(app);
         if(mousePosition.x >= 545 && mousePosition.x <= 690 && mousePosition.y >= 400 && mousePosition.y <= 550)
