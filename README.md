@@ -1,5 +1,7 @@
    #                                                      Tao's  Adventure  [![CodeFactor](https://www.codefactor.io/repository/github/shaswata56/taos-adventure/badge)](https://www.codefactor.io/repository/github/shaswata56/taos-adventure)
    
+   [![Download Taos-Adventure](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/taos-adventure/files/latest/download) [![Download Taos-Adventure](https://img.shields.io/sourceforge/dt/taos-adventure.svg)](https://sourceforge.net/projects/taos-adventure/files/latest/download)
+   
    Project: 2 | SUST SWE-1/2 | Group: 17
    
    [Shakirul Hasan Khan](https://github.com/KhanShaheb34) – 2017831034
