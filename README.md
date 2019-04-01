@@ -1,12 +1,14 @@
-   #                                                      Tao's  Adventure
+   #                                                      Tao's  Adventure  [![CodeFactor](https://www.codefactor.io/repository/github/shaswata56/taos-adventure/badge)](https://www.codefactor.io/repository/github/shaswata56/taos-adventure)
    
-   Project: 2 | SWE-1/2 | Group: 17
+   [![Download Taos-Adventure](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/taos-adventure/files/latest/download) [![Download Taos-Adventure](https://img.shields.io/sourceforge/dt/taos-adventure.svg)](https://sourceforge.net/projects/taos-adventure/files/latest/download)
    
-   [Shakirul Hasan Khan](https://github.com/KhanShaheb) – 2017831034
+   Project: 2 | SUST SWE-1/2 | Group: 17
+   
+   [Shakirul Hasan Khan](https://github.com/KhanShaheb34) – 2017831034
    
    [Shaswata Das](https://github.com/shaswata56) – 2017831050
 
-   
+***
    
 
 ### Storyline:
@@ -26,8 +28,8 @@ Player will be able to move Tao right or left using Right Arrow/D or Left Arrow/
 
 
 ### Resources:
-- "C++"
-- "SFML 2.5.0"
+- **C++**
+- **SFML 2.5.0**
 
 
 ## License:
@@ -39,8 +41,8 @@ Player will be able to move Tao right or left using Right Arrow/D or Left Arrow/
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+    the Free Software Foundation, either version 3 of the License, or 
+    any later version.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of

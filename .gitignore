@@ -31,3 +31,25 @@
 *.out
 *.app
 *.cbp
+*.layout
+*.depend
+.vs/Taos-Adventure/v15/.suo
+*.db
+*.opendb
+*.ipch
+*.log
+*.pdb
+*.tlog
+*.sln
+*.vcxproj
+*.filters
+*.user
+bin/*
+Header/collision.hpp
+<<<<<<< HEAD
+*.svg
+*.cdr
+*.eps
+Taos-Adventure
+=======
+>>>>>>> parent of b874d41... resource add
