@@ -1,9 +1,11 @@
 LIBS=-lsfml-graphics -lsfml-audio -lsfml-network -lsfml-window -lsfml-system
 
 all:
-	@echo "** Building the game **"
+	@echo "Compiling Sources..."
 	g++ -c "Source/Taos-Adventure.cpp" -o Taos-Adventure.o
+	@echo "Linking Libraries..."
 	g++ -o Taos-Adventure Taos-Adventure.o $(LIBS)
+	@echo "Cleaning up..."
 	rm Taos-Adventure.o
 
 gdb:

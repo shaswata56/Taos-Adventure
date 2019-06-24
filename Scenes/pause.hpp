@@ -24,11 +24,17 @@ void pause(RenderWindow &app){
     app.setView(ZeroView);
     app.draw(pauseScreen);
 
-    if(Keyboard::isKeyPressed(Keyboard::Enter)) currentScene = gamePlay;
+    if(Keyboard::isKeyPressed(Keyboard::Enter)) 
+	    currentScene = gamePlay;
 
-    if(Mouse::isButtonPressed(Mouse::Left)){
-        if(Mouse::getPosition().x>475 && Mouse::getPosition().x<720 && Mouse::getPosition().y>345 && Mouse::getPosition().y<450) currentScene = gamePlay;
-        if(Mouse::getPosition().x>488 && Mouse::getPosition().x<705 && Mouse::getPosition().y>533 && Mouse::getPosition().y<625) currentScene = mainMenu;
+    if(Mouse::isButtonPressed(Mouse::Left)) {
+	Vector2i mousePos = Mouse::getPosition(app);
+        if(mousePos.x>475 && mousePos.x<720 
+	   && mousePos.y>345 && mousePos.y<450) 
+		currentScene = gamePlay;
+        if(mousePos.x>488 && mousePos.x<705 
+	   && mousePos.y>533 && mousePos.y<625) 
+		currentScene = mainMenu;
 
     }
 }

@@ -12,13 +12,14 @@
 
 int updateScene() {
     RenderWindow app(VideoMode(1200,800), "Pos:", Style::Close);
-    app.setFramerateLimit(45);
-    app.setVerticalSyncEnabled(false);
+    app.setFramerateLimit(50);
+    app.setVerticalSyncEnabled(true);
     currentScene = mainMenu;
     Font AmaticB;
     AmaticB.loadFromFile("Resource/Fonts/Amatic-Bold.ttf");
     Text endGameText("Game Over", AmaticB, 70);
-    endGameText.setOrigin(endGameText.getLocalBounds().width/2, endGameText.getLocalBounds().height/2);
+    endGameText.setOrigin(endGameText.getLocalBounds().width/2, 
+			  endGameText.getLocalBounds().height/2);
     endGameText.setPosition(600, 400);
     endGameText.setFillColor(Color::Red);
 
@@ -30,7 +31,7 @@ int updateScene() {
                 app.close();
             }
         }
-        //app.clear();
+        app.clear();
 
         switch(currentScene){
             case startingAnime:
@@ -46,6 +47,7 @@ int updateScene() {
                 pause(app);
                 break;
             case mainMenu:
+		game_dispose();
                 menu(app);
                 break;
             case storyLine:

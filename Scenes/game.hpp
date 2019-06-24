@@ -34,6 +34,19 @@ void MoiraGechi(void){
     Enemy* shoytans = new Enemy[15];
 }
 
+void game_dispose(void){
+    world1.StopSFX();
+    world2.StopSFX();
+    world4.StopSFX();
+    level = 0;
+    chk = false;
+    x = 100;
+    y = 400;
+    bx = 600;
+    velocityX = 0;
+    Enemy* shoytans = new Enemy[15];
+}
+
 void game(RenderWindow &app) {
     app.clear();
     if(gameStarted) {
